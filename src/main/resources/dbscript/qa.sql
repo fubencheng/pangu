@@ -10,7 +10,7 @@ CREATE TABLE qa_category (
   COMMENT = '问题分类表';
 
 INSERT INTO qa_category (id,category_name, is_delete, gmt_created, gmt_modified) VALUES (21, '技术', '0', NOW(), NOW());
-INSERT INTO qa_category (id,category_name, is_delete, gmt_created, gmt_modified) VALUES (22, '职业', '0', NOW(), NOW());
+INSERT INTO qa_category (id,category_name, is_delete, gmt_created, gmt_modified) VALUES (22, '工作', '0', NOW(), NOW());
 INSERT INTO qa_category (id,category_name, is_delete, gmt_created, gmt_modified) VALUES (25, '生活', '0', NOW(), NOW());
 
 CREATE TABLE qa_question (

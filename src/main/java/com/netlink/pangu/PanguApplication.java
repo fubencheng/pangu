@@ -1,7 +1,7 @@
 package com.netlink.pangu;
 
 import com.aliyun.openservices.ClientConfiguration;
-import com.netlink.pangu.common.OssUtil;
+import com.netlink.pangu.util.OssUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 @EnableTransactionManagement
 @SpringBootApplication
-@MapperScan({ "com.netlink.culture.ask.dao" })
+@MapperScan({ "com.netlink.pangu.dao" })
 public class PanguApplication implements TransactionManagementConfigurer {
 
 	public static void main(String[] args) {
@@ -48,9 +48,6 @@ public class PanguApplication implements TransactionManagementConfigurer {
     @Value("${oss.bucketName}")
     private String bucketName;
 
-    @Value("${cdn.endpoint}")
-    private String publicEndpoint;
-
     @Autowired
     private DataSource dataSource;
 
@@ -58,31 +55,30 @@ public class PanguApplication implements TransactionManagementConfigurer {
      * 阿里云服务配置
      * @return OssUtil
      */
-    @Bean
-    public OssUtil ossUtil() {
-        OssUtil ossUtil = new OssUtil();
-        ossUtil.setAccessId(accessId);
-        ossUtil.setAccessKey(accessKey);
-        ossUtil.setBucketName(bucketName);
-        ossUtil.setEndpoint(endpoint);
-        ossUtil.setPublicEndpoint(publicEndpoint);
-        ossUtil.setBucketPublicReadable();
-        return ossUtil;
-    }
+//    @Bean
+//    public OssUtil ossUtil() {
+//        OssUtil ossUtil = new OssUtil();
+//        ossUtil.setAccessId(accessId);
+//        ossUtil.setAccessKey(accessKey);
+//        ossUtil.setBucketName(bucketName);
+//        ossUtil.setEndpoint(endpoint);
+//        ossUtil.setBucketPublicReadable();
+//        return ossUtil;
+//    }
 
     /**
      * 阿里云服务客户端配置
      * @return ClientConfiguration
      */
-    @Bean
-    public ClientConfiguration printOssClientConfig() {
-        ClientConfiguration printOssClientConfig = new ClientConfiguration();
-        printOssClientConfig.setMaxConnections(100);
-        printOssClientConfig.setSocketTimeout(5000);
-        printOssClientConfig.setConnectionTimeout(5000);
-        printOssClientConfig.setMaxErrorRetry(3);
-        return printOssClientConfig;
-    }
+//    @Bean
+//    public ClientConfiguration printOssClientConfig() {
+//        ClientConfiguration printOssClientConfig = new ClientConfiguration();
+//        printOssClientConfig.setMaxConnections(100);
+//        printOssClientConfig.setSocketTimeout(5000);
+//        printOssClientConfig.setConnectionTimeout(5000);
+//        printOssClientConfig.setMaxErrorRetry(3);
+//        return printOssClientConfig;
+//    }
 
     /**
      * 事物配置
