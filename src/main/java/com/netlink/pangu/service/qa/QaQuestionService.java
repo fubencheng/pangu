@@ -30,8 +30,13 @@ public interface QaQuestionService {
 	 */
 	void save(QaQuestionDO question);
 
-//	void signQuestion(Long id, Integer eventType);
-//
+	/**
+	 * 记录问题赞、踩、读操作
+	 * @param questionId 问题主键ID
+	 * @param eventType 操作类型
+	 */
+	void signQuestion(Long questionId, Integer eventType);
+
 //	Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO);
 //
 //	QaQuestionDO findById(Long id);

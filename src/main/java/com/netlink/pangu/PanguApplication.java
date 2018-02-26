@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 @EnableTransactionManagement
 @SpringBootApplication
-@MapperScan({ "com.netlink.pangu.dao" })
+@MapperScan({ "com.netlink.pangu.dao.qa" })
 public class PanguApplication implements TransactionManagementConfigurer {
 
 	public static void main(String[] args) {

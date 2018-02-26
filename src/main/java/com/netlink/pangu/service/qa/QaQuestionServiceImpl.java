@@ -59,20 +59,20 @@ public class QaQuestionServiceImpl implements QaQuestionService {
 		}
 	}
 
-//	@Override
-//    @Transactional
-//	public void signQuestion(Long id, Integer eventType) {
-//		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType) {
-//			questionDAO.updateThumbUp(id);
-//		}
-//		if (EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
-//			questionDAO.updateThumbDown(id);
-//		}
-//		if (EventTypeEnum.READ.getEventCode() == eventType) {
-//			questionDAO.updateViews(id);
-//		}
-//	}
-//
+	@Override
+    @Transactional(rollbackFor = Exception.class)
+	public void signQuestion(Long id, Integer eventType) {
+		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType) {
+			qaQuestionDAO.updateThumbUp(id);
+		}
+		if (EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
+			qaQuestionDAO.updateThumbDown(id);
+		}
+		if (EventTypeEnum.READ.getEventCode() == eventType) {
+			qaQuestionDAO.updateViews(id);
+		}
+	}
+
 //	@Override
 //	public Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO) {
 //		Map<String, Object> paramMap = new HashMap<>(16);

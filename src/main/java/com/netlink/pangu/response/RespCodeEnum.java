@@ -23,7 +23,7 @@ public enum RespCodeEnum {
     /**
      * 成功
      */
-	SUCCESS("0000", "操作成功"),
+	SUCCESS("000", "操作成功"),
 
     /**
      * 参数异常
@@ -38,7 +38,7 @@ public enum RespCodeEnum {
     /**
      * 失败
      */
-	FAIL("9999", "操作失败"),
+	FAIL("999", "操作失败"),
 
     /**
      * 文件上传或下载异常

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * 问题操作DTO
  *
  * @author fubencheng
- * @version v0.1 2018-01-19 18:04 fubencheng Exp $
+ * @version 0.0.1 2018-01-19 18:04 fubencheng
  */
 @Data
 public class QuestionOpsDTO implements Serializable {

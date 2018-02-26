@@ -96,49 +96,47 @@ public class QaQuestionController extends BaseController {
 		return new BaseResponse();
 	}
 
-//	/**
-//	 * 顶踩浏览次数计数
-//	 *
-//	 * @param request
-//	 * @param opsDTO
-//	 * @return
-//	 */
-//	@PostMapping("/sign")
-//	public BaseResponse signQuestion(HttpServletRequest request, @Valid @RequestBody QuestionOpsDTO opsDTO) {
-//		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType() || EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
-//			checkThumbUpOrThumbDown(request, opsDTO);
-//		}else{
-//			questionService.signQuestion(opsDTO.getQuestionId(), 0);
-//		}
-//		return new BaseResponse();
-//	}
-//
-//	/**
-//	 * 顶踩浏览次数计数
-//	 * @param request
-//	 * @param opsDTO
-//	 */
-//	private void checkThumbUpOrThumbDown(HttpServletRequest request, QuestionOpsDTO opsDTO){
-//		SessionUser sessionUser= userService.getUser(request);
-//		if (sessionUser == null){
-//			throw new SystemException(RespCodeEnum.SYS_ERROR.getCode(), "login user cannot be null");
-//		}
-//		String userNo = sessionUser.getStaffNo();
-//		String userName = sessionUser.getName();
-//		QaQuestionEvaluateDO evaluate = questionEvaluateService.findByUserIdAndQuestionIdAndEvaluate(userNo, opsDTO.getQuestionId(), opsDTO.getEventType());
-//		if (evaluate == null) {
-//			evaluate = new QaQuestionEvaluateDO();
-//			evaluate.setUserId(userNo);
-//			evaluate.setUserName(userName);
-//			evaluate.setQuestionId(opsDTO.getQuestionId());
-//			evaluate.setEvaluate(opsDTO.getEventType());
-//			questionEvaluateService.save(evaluate);
-//			questionService.signQuestion(opsDTO.getQuestionId(), opsDTO.getEventType());
-//		}else{
-//			//questionService.signQuestion(opsDTO.getQuestionId(), 0);
-//		}
-//	}
-//
+	/**
+	 * 问题顶踩浏览次数计数
+	 * @param opsDTO
+	 * @return
+	 */
+	@PostMapping("/sign")
+	public BaseResponse signQuestion(@Valid @RequestBody QuestionOpsDTO opsDTO) {
+		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType() || EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
+			checkThumbUpOrThumbDown(request, opsDTO);
+		}else{
+			qaQuestionService.signQuestion(opsDTO.getQuestionId(), 0);
+		}
+		return new BaseResponse();
+	}
+
+	/**
+	 * 顶踩浏览次数计数
+	 * @param request
+	 * @param opsDTO
+	 */
+	private void checkThumbUpOrThumbDown(HttpServletRequest request, QuestionOpsDTO opsDTO){
+		SessionUser sessionUser= userService.getUser(request);
+		if (sessionUser == null){
+			throw new SystemException(RespCodeEnum.SYS_ERROR.getCode(), "login user cannot be null");
+		}
+		String userNo = sessionUser.getStaffNo();
+		String userName = sessionUser.getName();
+		QaQuestionEvaluateDO evaluate = questionEvaluateService.findByUserIdAndQuestionIdAndEvaluate(userNo, opsDTO.getQuestionId(), opsDTO.getEventType());
+		if (evaluate == null) {
+			evaluate = new QaQuestionEvaluateDO();
+			evaluate.setUserId(userNo);
+			evaluate.setUserName(userName);
+			evaluate.setQuestionId(opsDTO.getQuestionId());
+			evaluate.setEvaluate(opsDTO.getEventType());
+			questionEvaluateService.save(evaluate);
+			questionService.signQuestion(opsDTO.getQuestionId(), opsDTO.getEventType());
+		}else{
+			//questionService.signQuestion(opsDTO.getQuestionId(), 0);
+		}
+	}
+
 //	@GetMapping("/list")
 //	public BasePageResponse getQuestionList(@NotNull QuestionPageDTO pageDTO) {
 //		Page<QaQuestionDO> questionList = questionService.pageQuestionByCondition(pageDTO);
