@@ -12,34 +12,24 @@
  */
 package com.netlink.pangu.service.qa;
 
-import com.github.pagehelper.Page;
-import com.netlink.pangu.entity.qa.QaQuestionDO;
-import com.netlink.pangu.request.qa.QuestionPageDTO;
+import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
+
+import java.util.List;
 
 /**
- * 问题服务.
+ * 问题评价服务.
  *
  * @author fubencheng.
  * @version 0.0.1 2017-11-30 20:45 fubencheng.
  */
-public interface QaQuestionService {
+public interface QaQuestionEvaluateService {
 
 	/**
-	 * 保存问题
-	 * @param question 问题信息
-	 */
-	void save(QaQuestionDO question);
-
-	/**
-	 * 记录问题赞、踩、读操作
+	 * 查询问题评价.
 	 * @param userId 用户ID
-	 * @param questionId 问题主键ID
-	 * @param eventType 操作类型
+	 * @param questionId 问题ID
+	 * @return 用户评价列表
 	 */
-	void signQuestion(String userId, Long questionId, Integer eventType);
-
-//	Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO);
-//
-//	QaQuestionDO findById(Long id);
+	List<QaQuestionEvaluateDO> findByUserIdAndQuestionId(String userId, Long questionId);
 
 }

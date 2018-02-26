@@ -29,7 +29,7 @@ import com.netlink.pangu.request.qa.QuestionOpsDTO;
 import com.netlink.pangu.response.dto.qa.QuestionPageResponse;
 import com.netlink.pangu.response.dto.qa.QuestionDTO;
 import com.netlink.pangu.service.qa.QaCategoryService;
-import com.netlink.pangu.service.qa.QuestionEvaluateService;
+import com.netlink.pangu.service.qa.QaQuestionEvaluateService;
 import com.netlink.pangu.service.qa.QaQuestionService;
 import com.netlink.pangu.util.qa.EventTypeEnum;
 import com.netlink.pangu.request.qa.QuestionPageDTO;
@@ -60,16 +60,15 @@ public class QaQuestionController extends BaseController {
 
 	private QaQuestionService qaQuestionService;
 	private QaCategoryService qaCategoryService;
-//	private QuestionEvaluateService questionEvaluateService;
+	private QaQuestionEvaluateService qaQuestionEvaluateService;
 
 	@Autowired
 	public QaQuestionController(QaQuestionService qaQuestionService,
-                                QaCategoryService qaCategoryService
-//                              , QuestionEvaluateService questionEvaluateService
-                                                                    ){
+                                QaCategoryService qaCategoryService,
+								QaQuestionEvaluateService qaQuestionEvaluateService){
 		this.qaQuestionService = qaQuestionService;
 		this.qaCategoryService = qaCategoryService;
-//		this.questionEvaluateService = questionEvaluateService;
+		this.qaQuestionEvaluateService = qaQuestionEvaluateService;
 	}
 
     /**
@@ -98,16 +97,27 @@ public class QaQuestionController extends BaseController {
 
 	/**
 	 * 问题顶踩浏览次数计数
-	 * @param opsDTO
-	 * @return
+	 * @param opsDTO 操作信息
+	 * @return BaseResponse
 	 */
 	@PostMapping("/sign")
 	public BaseResponse signQuestion(@Valid @RequestBody QuestionOpsDTO opsDTO) {
-		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType() || EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
-			checkThumbUpOrThumbDown(request, opsDTO);
-		}else{
-			qaQuestionService.signQuestion(opsDTO.getQuestionId(), 0);
+		List<QaQuestionEvaluateDO> evaluateDOList = qaQuestionEvaluateService.findByUserIdAndQuestionId(USER_NO, opsDTO.getQuestionId());
+		for (QaQuestionEvaluateDO evaluateDO : evaluateDOList){
+			if (evaluateDO.getEvaluate() == EventTypeEnum.THUMB_UP.getEventCode()
+					&& opsDTO.getEventType() == EventTypeEnum.THUMB_UP.getEventCode()){
+				// 已经点过赞, 继续点赞
+				return new BaseResponse(RespCodeEnum.DUPLICATE.getCode(), RespCodeEnum.DUPLICATE.getMessage(), null);
+			}
+			if (evaluateDO.getEvaluate() == EventTypeEnum.THUMB_DOWN.getEventCode()
+					&& opsDTO.getEventType() == EventTypeEnum.THUMB_DOWN.getEventCode()){
+				// 已经点过踩, 继续点踩
+				return new BaseResponse(RespCodeEnum.DUPLICATE.getCode(), RespCodeEnum.DUPLICATE.getMessage(), null);
+			}
 		}
+
+		qaQuestionService.signQuestion(USER_NO, opsDTO.getQuestionId(), opsDTO.getEventType());
+
 		return new BaseResponse();
 	}
 
@@ -125,11 +135,7 @@ public class QaQuestionController extends BaseController {
 		String userName = sessionUser.getName();
 		QaQuestionEvaluateDO evaluate = questionEvaluateService.findByUserIdAndQuestionIdAndEvaluate(userNo, opsDTO.getQuestionId(), opsDTO.getEventType());
 		if (evaluate == null) {
-			evaluate = new QaQuestionEvaluateDO();
-			evaluate.setUserId(userNo);
-			evaluate.setUserName(userName);
-			evaluate.setQuestionId(opsDTO.getQuestionId());
-			evaluate.setEvaluate(opsDTO.getEventType());
+
 			questionEvaluateService.save(evaluate);
 			questionService.signQuestion(opsDTO.getQuestionId(), opsDTO.getEventType());
 		}else{

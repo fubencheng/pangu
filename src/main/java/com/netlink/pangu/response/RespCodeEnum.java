@@ -26,6 +26,11 @@ public enum RespCodeEnum {
 	SUCCESS("000", "操作成功"),
 
     /**
+     * 重复的操作
+     */
+    DUPLICATE("001","重复的操作"),
+
+    /**
      * 参数异常
      */
     ILLEGAL_ARG("0001", "参数异常"),
@@ -38,12 +43,7 @@ public enum RespCodeEnum {
     /**
      * 失败
      */
-	FAIL("999", "操作失败"),
-
-    /**
-     * 文件上传或下载异常
-     */
-    UPLOAD_FAIL("0003","文件下载异常");
+	FAIL("999", "操作失败");
 
 	private String code;
 	private String message;

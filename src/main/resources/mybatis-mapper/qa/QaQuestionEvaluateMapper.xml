@@ -7,7 +7,7 @@
         <result column="user_name" property="userName" />
         <result column="question_id" property="questionId" />
         <result column="evaluate" property="evaluate" />
-        <result column="is_delete" property="isDelete" />
+        <result column="is_delete" property="deleted" />
         <result column="gmt_created" property="gmtCreated" />
         <result column="gmt_modified" property="gmtModified" />
     </resultMap>
@@ -16,12 +16,11 @@
         id, user_id, user_name, question_id, evaluate, is_delete, gmt_created, gmt_modified
     </sql>
 
-    <select id="selectByUserIdAndQuestionIdAndEvaluate" resultMap="BaseResultMap">
+    <select id="findByUserIdAndQuestionId" resultMap="BaseResultMap">
         SELECT <include refid="BaseColumn" />
         FROM ask_question_evaluate
         WHERE user_id = #{user_id}
         AND question_id = #{questionId}
-        AND evaluate = #{evaluate}
         AND is_delete = '0'
     </select>
 

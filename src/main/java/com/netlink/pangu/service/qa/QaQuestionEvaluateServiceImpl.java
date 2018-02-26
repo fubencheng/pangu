@@ -12,18 +12,33 @@
  */
 package com.netlink.pangu.service.qa;
 
+import java.util.List;
+
+import com.netlink.pangu.dao.qa.QaQuestionEvaluateDAO;
 import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
- * 问题评价服务
+ * 问题评价服务实现类
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-public interface QuestionEvaluateService {
+@Service
+public class QaQuestionEvaluateServiceImpl implements QaQuestionEvaluateService {
 
-	void save(QaQuestionEvaluateDO evaluate);
+	private QaQuestionEvaluateDAO qaQuestionEvaluateDAO;
 
-	QaQuestionEvaluateDO findByUserIdAndQuestionIdAndEvaluate(String userId, Long questionId, Integer evaluate);
+	@Autowired
+	public QaQuestionEvaluateServiceImpl(QaQuestionEvaluateDAO qaQuestionEvaluateDAO){
+		this.qaQuestionEvaluateDAO = qaQuestionEvaluateDAO;
+	}
+
+	@Override
+	public List<QaQuestionEvaluateDO> findByUserIdAndQuestionId(String userId, Long questionId) {
+
+		return qaQuestionEvaluateDAO.findByUserIdAndQuestionId(userId, questionId);
+    }
 
 }

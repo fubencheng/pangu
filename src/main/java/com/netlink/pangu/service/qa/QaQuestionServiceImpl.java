@@ -18,6 +18,7 @@ import java.util.Map;
 
 import com.netlink.pangu.dao.qa.QaQuestionDAO;
 import com.netlink.pangu.entity.qa.QaQuestionDO;
+import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
 import com.netlink.pangu.request.qa.QuestionPageDTO;
 import com.netlink.pangu.util.qa.EventTypeEnum;
 import com.netlink.pangu.response.RespCodeEnum;
@@ -61,16 +62,24 @@ public class QaQuestionServiceImpl implements QaQuestionService {
 
 	@Override
     @Transactional(rollbackFor = Exception.class)
-	public void signQuestion(Long id, Integer eventType) {
+	public void signQuestion(String userId, Long questionId, Integer eventType) {
 		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType) {
-			qaQuestionDAO.updateThumbUp(id);
+			qaQuestionDAO.updateThumbUp(questionId);
 		}
 		if (EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
-			qaQuestionDAO.updateThumbDown(id);
+			qaQuestionDAO.updateThumbDown(questionId);
 		}
 		if (EventTypeEnum.READ.getEventCode() == eventType) {
-			qaQuestionDAO.updateViews(id);
+			qaQuestionDAO.updateViews(questionId);
 		}
+	}
+
+	private void saveQuestionEvaluate(){
+		QaQuestionEvaluateDO evaluate = new QaQuestionEvaluateDO();
+		evaluate.setUserId(userNo);
+		evaluate.setUserName(userName);
+		evaluate.setQuestionId(opsDTO.getQuestionId());
+		evaluate.setEvaluate(opsDTO.getEventType());
 	}
 
 //	@Override

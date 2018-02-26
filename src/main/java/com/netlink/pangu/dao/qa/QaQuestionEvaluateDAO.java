@@ -16,6 +16,8 @@ import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
 import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 /**
  * 问题评论DAO
  *
@@ -24,7 +26,13 @@ import tk.mybatis.mapper.common.Mapper;
  */
 public interface QaQuestionEvaluateDAO extends Mapper<QaQuestionEvaluateDO> {
 
-    QaQuestionEvaluateDO selectByUserIdAndQuestionIdAndEvaluate(@Param("userId") String userId, @Param("questionId") Long questionId,
-                                                                @Param("evaluate") Integer evaluate);
+    /**
+     * 查询问题评论.
+     * @param userId 用户ID
+     * @param questionId 问题ID
+     * @return 评论列表
+     */
+    List<QaQuestionEvaluateDO> findByUserIdAndQuestionId(@Param("userId") String userId,
+                                                         @Param("questionId") Long questionId);
 
 }
