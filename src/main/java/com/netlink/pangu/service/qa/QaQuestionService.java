@@ -13,7 +13,7 @@
 package com.netlink.pangu.service.qa;
 
 import com.github.pagehelper.Page;
-import com.netlink.pangu.entity.qa.QaQuestionDO;
+import com.netlink.pangu.domain.QaQuestion;
 import com.netlink.pangu.request.qa.QuestionPageDTO;
 
 /**
@@ -28,7 +28,7 @@ public interface QaQuestionService {
 	 * 保存问题
 	 * @param question 问题信息
 	 */
-	void save(QaQuestionDO question);
+	void save(QaQuestion question);
 
 	/**
 	 * 记录问题赞、踩、读操作
