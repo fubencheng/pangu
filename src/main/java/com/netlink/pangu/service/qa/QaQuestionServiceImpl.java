@@ -74,13 +74,13 @@ public class QaQuestionServiceImpl implements QaQuestionService {
 		}
 	}
 
-	private void saveQuestionEvaluate(){
-		QaQuestionEvaluateDO evaluate = new QaQuestionEvaluateDO();
-		evaluate.setUserId(userNo);
-		evaluate.setUserName(userName);
-		evaluate.setQuestionId(opsDTO.getQuestionId());
-		evaluate.setEvaluate(opsDTO.getEventType());
-	}
+//	private void saveQuestionEvaluate(){
+//		QaQuestionEvaluateDO evaluate = new QaQuestionEvaluateDO();
+//		evaluate.setUserId(userNo);
+//		evaluate.setUserName(userName);
+//		evaluate.setQuestionId(opsDTO.getQuestionId());
+//		evaluate.setEvaluate(opsDTO.getEventType());
+//	}
 
 //	@Override
 //	public Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO) {
