@@ -20,23 +20,34 @@ package com.netlink.pangu.util.qa;
  */
 public enum EventTypeEnum {
 
-	THUMB_UP(1, "赞"),
-	THUMB_DOWN(-1, " 踩"),
-	READ(0, "读");
+	/**
+	 * 赞
+	 */
+	THUMB_UP((byte)1, "赞"),
 
-	private int eventCode;
+	/**
+	 * 踩
+	 */
+	THUMB_DOWN((byte)-1, "踩"),
+
+	/**
+	 * 读
+	 */
+	READ((byte) 0, "读");
+
+	private byte eventCode;
 	private String eventMsg;
 
-	EventTypeEnum(int eventCode, String eventMsg) {
+	EventTypeEnum(byte eventCode, String eventMsg) {
 		this.setEventCode(eventCode);
 		this.setEventMsg(eventMsg);
 	}
 
-	public int getEventCode() {
+	public byte getEventCode() {
 		return eventCode;
 	}
 
-	private void setEventCode(int eventCode) {
+	private void setEventCode(byte eventCode) {
 		this.eventCode = eventCode;
 	}
 

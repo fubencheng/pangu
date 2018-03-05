@@ -14,10 +14,11 @@ package com.netlink.pangu.service.qa;
 
 import com.github.pagehelper.Page;
 import com.netlink.pangu.domain.QaQuestion;
+import com.netlink.pangu.request.qa.QuestionOpsDTO;
 import com.netlink.pangu.request.qa.QuestionPageDTO;
 
 /**
- * 问题服务.
+ * QaQuestionService.
  *
  * @author fubencheng.
  * @version 0.0.1 2017-11-30 20:45 fubencheng.
@@ -26,17 +27,17 @@ public interface QaQuestionService {
 
 	/**
 	 * 保存问题
-	 * @param question 问题信息
+	 * @param question question
 	 */
 	void save(QaQuestion question);
 
 	/**
 	 * 记录问题赞、踩、读操作
-	 * @param userId 用户ID
-	 * @param questionId 问题主键ID
-	 * @param eventType 操作类型
+	 * @param userId userId
+	 * @param userName userName
+	 * @param opsDTO opsDTO
 	 */
-	void signQuestion(String userId, Long questionId, Integer eventType);
+	void signQuestion(String userId, String userName, QuestionOpsDTO opsDTO);
 
 //	Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO);
 //

@@ -48,7 +48,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.Page;
 
 /**
- * 问题控制器
+ * QaQuestionController
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -58,28 +58,28 @@ import com.github.pagehelper.Page;
 @RequestMapping("/qa/question")
 public class QaQuestionController extends BaseController {
 
-	private QaQuestionService qaQuestionService;
-	private QaCategoryService qaCategoryService;
-	private QaQuestionEvaluateService qaQuestionEvaluateService;
+	private QaQuestionService questionService;
+	private QaCategoryService categoryService;
+	private QaQuestionEvaluateService questionEvaluateService;
 
 	@Autowired
-	public QaQuestionController(QaQuestionService qaQuestionService,
-                                QaCategoryService qaCategoryService,
-								QaQuestionEvaluateService qaQuestionEvaluateService){
-		this.qaQuestionService = qaQuestionService;
-		this.qaCategoryService = qaCategoryService;
-		this.qaQuestionEvaluateService = qaQuestionEvaluateService;
+	public QaQuestionController(QaQuestionService questionService,
+                                QaCategoryService categoryService,
+								QaQuestionEvaluateService questionEvaluateService){
+		this.questionService = questionService;
+		this.categoryService = categoryService;
+		this.questionEvaluateService = questionEvaluateService;
 	}
 
     /**
      * 保存问题
-     * @param questionAddDTO 问题信息
+     * @param questionAddDTO questionAddDTO
      * @return BaseResponse
      */
 	@PostMapping("/save")
 	public BaseResponse save(@Valid @RequestBody QuestionAddDTO questionAddDTO) {
 
-		QaCategory category = qaCategoryService.findById(questionAddDTO.getCategoryId());
+		QaCategory category = categoryService.findById(questionAddDTO.getCategoryId());
 		QaQuestion questionDO = new QaQuestion();
 		questionDO.setCategoryId(category.getId());
 		questionDO.setCategoryName(category.getCategoryName());
@@ -90,58 +90,36 @@ public class QaQuestionController extends BaseController {
 		String questionEmoji = questionAddDTO.getQuestion()
 				.replaceAll("[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]", "");
 		questionDO.setQuestion(questionEmoji);
-		qaQuestionService.save(questionDO);
+		questionService.save(questionDO);
 
 		return new BaseResponse();
 	}
 
 	/**
 	 * 问题顶踩浏览次数计数
-	 * @param opsDTO 操作信息
+	 * @param opsDTO opsDTO
 	 * @return BaseResponse
 	 */
 	@PostMapping("/sign")
 	public BaseResponse signQuestion(@Valid @RequestBody QuestionOpsDTO opsDTO) {
-		List<QaQuestionEvaluateDO> evaluateDOList = qaQuestionEvaluateService.findByUserIdAndQuestionId(USER_NO, opsDTO.getQuestionId());
-		for (QaQuestionEvaluateDO evaluateDO : evaluateDOList){
-			if (evaluateDO.getEvaluate() == EventTypeEnum.THUMB_UP.getEventCode()
+		List<QaQuestionEvaluate> evaluateList = questionEvaluateService.findByUserIdAndQuestionId(USER_NO, opsDTO.getQuestionId());
+		for (QaQuestionEvaluate questionEvaluate : evaluateList){
+			if (questionEvaluate.getEvaluate() == EventTypeEnum.THUMB_UP.getEventCode()
 					&& opsDTO.getEventType() == EventTypeEnum.THUMB_UP.getEventCode()){
 				// 已经点过赞, 继续点赞
 				return new BaseResponse(RespCodeEnum.DUPLICATE.getCode(), RespCodeEnum.DUPLICATE.getMessage(), null);
 			}
-			if (evaluateDO.getEvaluate() == EventTypeEnum.THUMB_DOWN.getEventCode()
+			if (questionEvaluate.getEvaluate() == EventTypeEnum.THUMB_DOWN.getEventCode()
 					&& opsDTO.getEventType() == EventTypeEnum.THUMB_DOWN.getEventCode()){
 				// 已经点过踩, 继续点踩
 				return new BaseResponse(RespCodeEnum.DUPLICATE.getCode(), RespCodeEnum.DUPLICATE.getMessage(), null);
 			}
 		}
 
-		qaQuestionService.signQuestion(USER_NO, opsDTO.getQuestionId(), opsDTO.getEventType());
+		questionService.signQuestion(USER_NO, USER, opsDTO);
 
 		return new BaseResponse();
 	}
-
-	/**
-	 * 顶踩浏览次数计数
-	 * @param request
-	 * @param opsDTO
-	 */
-//	private void checkThumbUpOrThumbDown(HttpServletRequest request, QuestionOpsDTO opsDTO){
-//		SessionUser sessionUser= userService.getUser(request);
-//		if (sessionUser == null){
-//			throw new SystemException(RespCodeEnum.SYS_ERROR.getCode(), "login user cannot be null");
-//		}
-//		String userNo = sessionUser.getStaffNo();
-//		String userName = sessionUser.getName();
-//		QaQuestionEvaluateDO evaluate = questionEvaluateService.findByUserIdAndQuestionIdAndEvaluate(userNo, opsDTO.getQuestionId(), opsDTO.getEventType());
-//		if (evaluate == null) {
-//
-//			questionEvaluateService.save(evaluate);
-//			questionService.signQuestion(opsDTO.getQuestionId(), opsDTO.getEventType());
-//		}else{
-//			//questionService.signQuestion(opsDTO.getQuestionId(), 0);
-//		}
-//	}
 
 //	@GetMapping("/list")
 //	public BasePageResponse getQuestionList(@NotNull QuestionPageDTO pageDTO) {

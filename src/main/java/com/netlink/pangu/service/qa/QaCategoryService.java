@@ -12,12 +12,12 @@
  */
 package com.netlink.pangu.service.qa;
 
-import com.netlink.pangu.entity.qa.QaCategoryDO;
+import com.netlink.pangu.domain.QaCategory;
 
 import java.util.List;
 
 /**
- * 问题分类服务
+ * QaCategoryService
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -26,15 +26,15 @@ public interface QaCategoryService {
 
 	/**
 	 * 查询问题分类
-	 * @param id 主键ID
-	 * @return QaCategoryDO
+	 * @param id id
+	 * @return QaCategory
 	 */
-	QaCategoryDO findById(Long id);
+	QaCategory findById(Long id);
 
 	/**
 	 * 查询全部问题分类
-	 * @return List<QaCategoryDO>
+	 * @return List<QaCategory>
 	 */
-	List<QaCategoryDO> findAll();
+	List<QaCategory> findAll();
 
 }

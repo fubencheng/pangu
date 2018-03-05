@@ -10,23 +10,45 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.service.qa;
+package com.netlink.pangu.base;
 
-import java.util.Map;
+import lombok.Data;
 
-import com.github.pagehelper.Page;
-import com.netlink.pangu.domain.QaAnswerComment;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.Date;
 
 /**
- * 评论服务
+ * BaseDO
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2018-03-05 20:20 fubencheng
  */
-public interface CommentService {
+@Data
+public class BaseDO {
+    /**
+     * 主键ID
+     */
+    @Id
+    @GeneratedValue(generator = "JDBC")
+    private Long id;
 
-	void save(QaAnswerComment comment);
+    /**
+     * 是否逻辑删除
+     */
+    @Column(name = "is_delete")
+    private String isDelete = "0";
 
-	Page<QaAnswerComment> pageCommentByCondition(Map<String, Object> condition);
+    /**
+     * 创建时间
+     */
+    @Column(name = "gmt_created")
+    private Date gmtCreated = new Date();
 
+    /**
+     * 修改时间
+     */
+    @Column(name = "gmt_modified")
+    private Date gmtModified;
 }

@@ -1,20 +1,21 @@
 package com.netlink.pangu.domain;
 
+import com.netlink.pangu.base.BaseDO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * QaAnswerComment
+ *
+ * @author fubencheng
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
+ */
 @Data
-@Table(name = "qa_comment")
-public class QaComment {
-    /**
-     * 主键ID
-     */
-    @Id
-    @GeneratedValue(generator = "JDBC")
-    private Long id;
-
+@EqualsAndHashCode(callSuper = false)
+@Table(name = "qa_answer_comment")
+public class QaAnswerComment extends BaseDO {
     /**
      * 回答ID
      */
@@ -50,24 +51,6 @@ public class QaComment {
      */
     @Column(name = "reply_to_user_name")
     private String replyToUserName;
-
-    /**
-     * 是否逻辑删除
-     */
-    @Column(name = "is_delete")
-    private String isDelete;
-
-    /**
-     * 创建时间
-     */
-    @Column(name = "gmt_created")
-    private Date gmtCreated;
-
-    /**
-     * 修改时间
-     */
-    @Column(name = "gmt_modified")
-    private Date gmtModified;
 
     /**
      * 评论

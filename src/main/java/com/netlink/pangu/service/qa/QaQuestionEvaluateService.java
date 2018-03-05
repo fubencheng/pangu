@@ -12,8 +12,7 @@
  */
 package com.netlink.pangu.service.qa;
 
-import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
-
+import com.netlink.pangu.domain.QaQuestionEvaluate;
 import java.util.List;
 
 /**
@@ -30,6 +29,6 @@ public interface QaQuestionEvaluateService {
 	 * @param questionId 问题ID
 	 * @return 用户评价列表
 	 */
-	List<QaQuestionEvaluateDO> findByUserIdAndQuestionId(String userId, Long questionId);
+	List<QaQuestionEvaluate> findByUserIdAndQuestionId(String userId, Long questionId);
 
 }

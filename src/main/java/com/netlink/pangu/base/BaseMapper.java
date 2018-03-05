@@ -10,23 +10,18 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.service.qa;
+package com.netlink.pangu.base;
 
-import java.util.Map;
-
-import com.github.pagehelper.Page;
-import com.netlink.pangu.domain.QaAnswerComment;
+import tk.mybatis.mapper.common.ConditionMapper;
+import tk.mybatis.mapper.common.IdsMapper;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
- * 评论服务
+ * BaseMapper
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2018-03-05 16:35 fubencheng
  */
-public interface CommentService {
-
-	void save(QaAnswerComment comment);
-
-	Page<QaAnswerComment> pageCommentByCondition(Map<String, Object> condition);
-
+public interface BaseMapper<T> extends Mapper<T>, ConditionMapper<T>, MySqlMapper<T>, IdsMapper<T> {
 }

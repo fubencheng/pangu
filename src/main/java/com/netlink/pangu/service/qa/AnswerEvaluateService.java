@@ -12,18 +12,18 @@
  */
 package com.netlink.pangu.service.qa;
 
-import com.netlink.pangu.entity.qa.QaAnswerEvaluateDO;
+import com.netlink.pangu.domain.QaAnswerEvaluate;
 
 /**
- * 回答评价服务
+ * AnswerEvaluateService
  *
  * @author fubencheng
  * @version v0.1 2017-11-30 20:45 fubencheng Exp $
  */
 public interface AnswerEvaluateService {
 
-	void saveEavluate(QaAnswerEvaluateDO evaluate);
+	void save(QaAnswerEvaluate answerEvaluate);
 
-	QaAnswerEvaluateDO findByUserIdAndAnswerIdAndEvaluate(String userId, Long answerId, Integer evaluate);
+	QaAnswerEvaluate findByUserIdAndAnswerIdAndEvaluate(String userId, Long answerId, Integer evaluate);
 
 }

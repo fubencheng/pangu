@@ -14,13 +14,14 @@ package com.netlink.pangu.service.qa;
 
 import java.util.List;
 
-import com.netlink.pangu.dao.qa.QaQuestionEvaluateDAO;
-import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
+import com.netlink.pangu.dao.QaQuestionEvaluateMapper;
+import com.netlink.pangu.domain.QaQuestionEvaluate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Condition;
 
 /**
- * 问题评价服务实现类
+ * QaQuestionEvaluateServiceImpl
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -28,17 +29,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class QaQuestionEvaluateServiceImpl implements QaQuestionEvaluateService {
 
-	private QaQuestionEvaluateDAO qaQuestionEvaluateDAO;
+	private QaQuestionEvaluateMapper questionEvaluateMapper;
 
 	@Autowired
-	public QaQuestionEvaluateServiceImpl(QaQuestionEvaluateDAO qaQuestionEvaluateDAO){
-		this.qaQuestionEvaluateDAO = qaQuestionEvaluateDAO;
+	public QaQuestionEvaluateServiceImpl(QaQuestionEvaluateMapper questionEvaluateMapper){
+		this.questionEvaluateMapper = questionEvaluateMapper;
 	}
 
 	@Override
-	public List<QaQuestionEvaluateDO> findByUserIdAndQuestionId(String userId, Long questionId) {
-
-		return qaQuestionEvaluateDAO.findByUserIdAndQuestionId(userId, questionId);
+	public List<QaQuestionEvaluate> findByUserIdAndQuestionId(String userId, Long questionId) {
+		Condition condition = new Condition(QaQuestionEvaluate.class);
+		condition.createCriteria().andEqualTo("userId", userId)
+				.andEqualTo("questionId", questionId)
+				.andEqualTo("isDelete", '0');
+		return questionEvaluateMapper.selectByCondition(condition);
     }
 
 }

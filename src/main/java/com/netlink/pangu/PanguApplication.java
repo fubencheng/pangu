@@ -3,25 +3,21 @@ package com.netlink.pangu;
 import com.aliyun.openservices.ClientConfiguration;
 import com.netlink.pangu.util.OssUtil;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 import javax.servlet.MultipartConfigElement;
-import javax.sql.DataSource;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 应用启动入口
+ * 应用启动入口，开启事务管理，扫描加载mybatis mapper接口
  *
  * @author fubencheng
  * @version 0.0.1 2018-01-06 16:19 fubencheng
@@ -29,8 +25,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 @EnableTransactionManagement
 @SpringBootApplication
-@MapperScan({ "com.netlink.pangu.dao.qa" })
-public class PanguApplication implements TransactionManagementConfigurer {
+@MapperScan({ "com.netlink.pangu.dao" })
+public class PanguApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PanguApplication.class, args);
@@ -47,9 +43,6 @@ public class PanguApplication implements TransactionManagementConfigurer {
 
     @Value("${oss.bucketName}")
     private String bucketName;
-
-    @Autowired
-    private DataSource dataSource;
 
     /**
      * 阿里云服务配置
@@ -79,16 +72,6 @@ public class PanguApplication implements TransactionManagementConfigurer {
 //        printOssClientConfig.setMaxErrorRetry(3);
 //        return printOssClientConfig;
 //    }
-
-    /**
-     * 事物配置
-     * @return DataSourceTransactionManager
-     */
-    @Override
-    @Bean
-    public DataSourceTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(dataSource);
-    }
 
     /**
      * HTTP请求参数验证配置

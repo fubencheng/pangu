@@ -12,7 +12,7 @@
  */
 package com.netlink.pangu.web.qa;
 
-import com.netlink.pangu.entity.qa.QaCategoryDO;
+import com.netlink.pangu.domain.QaCategory;
 import com.netlink.pangu.response.BaseResponse;
 import com.netlink.pangu.response.dto.qa.QaCategoryDTO;
 import com.netlink.pangu.service.qa.QaCategoryService;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 问题分类控制器
+ * QaCategoryController
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -34,18 +34,22 @@ import java.util.List;
 @RequestMapping("/qa/category")
 public class QaCategoryController {
 
-	private QaCategoryService qaCategoryService;
+	private QaCategoryService categoryService;
 
 	@Autowired
-	public QaCategoryController(QaCategoryService qaCategoryService){
-			this.qaCategoryService = qaCategoryService;
+	public QaCategoryController(QaCategoryService categoryService){
+			this.categoryService = categoryService;
 	}
 
+	/**
+	 * 查询问题分类
+	 * @return BaseResponse
+	 */
 	@GetMapping("/list")
-	public BaseResponse getAskCategoryList() {
-		List<QaCategoryDO> categoryDOList = qaCategoryService.findAll();
+	public BaseResponse getQaCategoryList() {
+		List<QaCategory> categoryDOList = categoryService.findAll();
 		List<QaCategoryDTO> categoryList = new ArrayList<>();
-		for (QaCategoryDO categoryDO : categoryDOList){
+		for (QaCategory categoryDO : categoryDOList){
 			QaCategoryDTO categoryDTO = new QaCategoryDTO();
 			categoryDTO.setId(categoryDO.getId());
 			categoryDTO.setCategoryName(categoryDO.getCategoryName());

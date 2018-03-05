@@ -12,15 +12,16 @@
  */
 package com.netlink.pangu.service.qa;
 
-import com.netlink.pangu.dao.qa.QaCategoryDAO;
-import com.netlink.pangu.entity.qa.QaCategoryDO;
+import com.netlink.pangu.dao.QaCategoryMapper;
+import com.netlink.pangu.domain.QaCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Condition;
 
 import java.util.List;
 
 /**
- * 问题分类服务实现类
+ * QaCategoryServiceImpl
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -28,21 +29,23 @@ import java.util.List;
 @Service
 public class QaCategoryServiceImpl implements QaCategoryService {
 
-	private QaCategoryDAO qaCategoryDAO;
+	private QaCategoryMapper categoryMapper;
 
 	@Autowired
-	public QaCategoryServiceImpl(QaCategoryDAO qaCategoryDAO){
-		this.qaCategoryDAO = qaCategoryDAO;
+	public QaCategoryServiceImpl(QaCategoryMapper categoryMapper){
+		this.categoryMapper = categoryMapper;
 	}
 
 	@Override
-	public QaCategoryDO findById(Long id) {
-		return qaCategoryDAO.selectByPrimaryKey(id);
+	public QaCategory findById(Long id) {
+		return categoryMapper.selectByPrimaryKey(id);
 	}
 
 	@Override
-	public List<QaCategoryDO> findAll() {
-		return qaCategoryDAO.findAll();
+	public List<QaCategory> findAll() {
+		Condition condition = new Condition(QaCategory.class);
+		condition.createCriteria().andEqualTo("isDelete", "0");
+		return categoryMapper.selectByCondition(condition);
 	}
 
 }

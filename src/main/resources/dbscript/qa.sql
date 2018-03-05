@@ -59,7 +59,7 @@ CREATE TABLE qa_answer (
   ENGINE = InnoDB
   COMMENT = '回答表';
 
-CREATE TABLE qa_comment (
+CREATE TABLE qa_answer_comment (
   id BIGINT NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   answer_id BIGINT NOT NULL DEFAULT 0 COMMENT '回答ID',
   user_id CHAR(64) NOT NULL DEFAULT '' COMMENT '评论人ID',

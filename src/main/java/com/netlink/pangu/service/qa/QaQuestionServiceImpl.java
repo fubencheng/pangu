@@ -16,9 +16,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.netlink.pangu.dao.qa.QaQuestionDAO;
-import com.netlink.pangu.entity.qa.QaQuestionDO;
-import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
+import com.netlink.pangu.dao.QaQuestionEvaluateMapper;
+import com.netlink.pangu.dao.QaQuestionMapper;
+import com.netlink.pangu.domain.QaQuestion;
+import com.netlink.pangu.domain.QaQuestionEvaluate;
+import com.netlink.pangu.request.qa.QuestionOpsDTO;
 import com.netlink.pangu.request.qa.QuestionPageDTO;
 import com.netlink.pangu.util.qa.EventTypeEnum;
 import com.netlink.pangu.response.RespCodeEnum;
@@ -30,10 +32,12 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * 问题服务实现类
+ * QaQuestionServiceImpl
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
@@ -42,45 +46,51 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class QaQuestionServiceImpl implements QaQuestionService {
 
-	private QaQuestionDAO qaQuestionDAO;
+	private QaQuestionMapper questionMapper;
+	private QaQuestionEvaluateMapper questionEvaluateMapper;
 
 	@Autowired
-	public QaQuestionServiceImpl(QaQuestionDAO qaQuestionDAO){
-
-		this.qaQuestionDAO = qaQuestionDAO;
+	public QaQuestionServiceImpl(QaQuestionMapper questionMapper,
+								 QaQuestionEvaluateMapper questionEvaluateMapper){
+		this.questionMapper = questionMapper;
+		this.questionEvaluateMapper = questionEvaluateMapper;
 	}
 
 	@Override
-	public void save(QaQuestionDO question) {
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public void save(QaQuestion question) {
 		question.setGmtCreated(new Date());
 		try {
-			qaQuestionDAO.insertSelective(question);
+			questionMapper.insertSelective(question);
 		} catch (Exception e){
 			throw new BizException(RespCodeEnum.FAIL.getCode(), "failed to save question");
 		}
 	}
 
 	@Override
-    @Transactional(rollbackFor = Exception.class)
-	public void signQuestion(String userId, Long questionId, Integer eventType) {
-		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType) {
-			qaQuestionDAO.updateThumbUp(questionId);
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public void signQuestion(String userId, String userName, QuestionOpsDTO opsDTO) {
+		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType()) {
+			saveQuestionEvaluate(userId, userName, opsDTO);
+			questionMapper.updateThumbUp(opsDTO.getQuestionId());
 		}
-		if (EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
-			qaQuestionDAO.updateThumbDown(questionId);
+		if (EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
+			saveQuestionEvaluate(userId, userName, opsDTO);
+			questionMapper.updateThumbDown(opsDTO.getQuestionId());
 		}
-		if (EventTypeEnum.READ.getEventCode() == eventType) {
-			qaQuestionDAO.updateViews(questionId);
+		if (EventTypeEnum.READ.getEventCode() == opsDTO.getEventType()) {
+			questionMapper.updateViews(opsDTO.getQuestionId());
 		}
 	}
 
-//	private void saveQuestionEvaluate(){
-//		QaQuestionEvaluateDO evaluate = new QaQuestionEvaluateDO();
-//		evaluate.setUserId(userNo);
-//		evaluate.setUserName(userName);
-//		evaluate.setQuestionId(opsDTO.getQuestionId());
-//		evaluate.setEvaluate(opsDTO.getEventType());
-//	}
+	private void saveQuestionEvaluate(String userId, String userName, QuestionOpsDTO opsDTO){
+		QaQuestionEvaluate evaluate = new QaQuestionEvaluate();
+		evaluate.setUserId(userId);
+		evaluate.setUserName(userName);
+		evaluate.setQuestionId(opsDTO.getQuestionId());
+		evaluate.setEvaluate(opsDTO.getEventType());
+		questionEvaluateMapper.insertSelective(evaluate);
+	}
 
 //	@Override
 //	public Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO) {

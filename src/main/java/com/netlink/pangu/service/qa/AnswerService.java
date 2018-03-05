@@ -15,7 +15,7 @@ package com.netlink.pangu.service.qa;
 import java.util.Map;
 
 import com.github.pagehelper.Page;
-import com.netlink.pangu.entity.qa.QaAnswerDO;
+import com.netlink.pangu.domain.QaAnswer;
 
 /**
  * 回答服务
@@ -25,10 +25,10 @@ import com.netlink.pangu.entity.qa.QaAnswerDO;
  */
 public interface AnswerService {
 
-	void saveAnswer(QaAnswerDO answer);
+	void saveAnswer(QaAnswer qaAnswer);
 
 	void signAnswer(Long id, Integer eventType);
 
-	Page<QaAnswerDO> pageAnswerByCondition(Map<String, Object> condition);
+	Page<QaAnswer> pageAnswerByCondition(Map<String, Object> condition);
 
 }

@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * 问题操作DTO
+ * QuestionOpsDTO
  *
  * @author fubencheng
  * @version 0.0.1 2018-01-19 18:04 fubencheng
@@ -26,10 +26,18 @@ import java.io.Serializable;
 @Data
 public class QuestionOpsDTO implements Serializable {
 
+    private static final long serialVersionUID = -7900583266757257136L;
+
+    /**
+     * 问题主键ID
+     */
     @NotNull
     private Long questionId;
 
+    /**
+     * 操作类型，-1:踩,1:赞
+     */
     @NotNull
-    private Integer eventType;
+    private Byte eventType;
 
 }
