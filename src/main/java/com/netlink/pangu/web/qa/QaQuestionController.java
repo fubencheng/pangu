@@ -22,9 +22,9 @@ import javax.validation.constraints.NotNull;
 import com.netlink.pangu.request.qa.QuestionAddDTO;
 import com.netlink.pangu.response.BasePageResponse;
 import com.netlink.pangu.response.BaseResponse;
-import com.netlink.pangu.entity.qa.QaCategoryDO;
-import com.netlink.pangu.entity.qa.QaQuestionDO;
-import com.netlink.pangu.entity.qa.QaQuestionEvaluateDO;
+import com.netlink.pangu.domain.QaCategory;
+import com.netlink.pangu.domain.QaQuestion;
+import com.netlink.pangu.domain.QaQuestionEvaluate;
 import com.netlink.pangu.request.qa.QuestionOpsDTO;
 import com.netlink.pangu.response.dto.qa.QuestionPageResponse;
 import com.netlink.pangu.response.dto.qa.QuestionDTO;
@@ -79,8 +79,8 @@ public class QaQuestionController extends BaseController {
 	@PostMapping("/save")
 	public BaseResponse save(@Valid @RequestBody QuestionAddDTO questionAddDTO) {
 
-		QaCategoryDO category = qaCategoryService.findById(questionAddDTO.getCategoryId());
-		QaQuestionDO questionDO = new QaQuestionDO();
+		QaCategory category = qaCategoryService.findById(questionAddDTO.getCategoryId());
+		QaQuestion questionDO = new QaQuestion();
 		questionDO.setCategoryId(category.getId());
 		questionDO.setCategoryName(category.getCategoryName());
 		questionDO.setUserId(USER_NO);
