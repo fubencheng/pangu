@@ -12,8 +12,8 @@
  */
 package com.netlink.pangu.exception;
 
-import com.netlink.pangu.response.BaseResponse;
-import com.netlink.pangu.response.RespCodeEnum;
+import com.netlink.pangu.consts.RespCodeEnum;
+import com.netlink.pangu.dto.response.BaseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -39,21 +39,15 @@ public class ExceptionInterceptor {
     }
 
     @ExceptionHandler({ MethodArgumentTypeMismatchException.class, MethodArgumentNotValidException.class, BindException.class })
-    public BaseResponse parameterValidationException(HttpServletRequest request, Exception e){
+    public BaseResult parameterValidationException(HttpServletRequest request, Exception e){
         log.error("request uri[{}], exception class[{}]", request.getRequestURI(), e.getClass().getName(), e);
-        return new BaseResponse(RespCodeEnum.ILLEGAL_ARG.getCode(), RespCodeEnum.ILLEGAL_ARG.getMessage(), null);
+        return new BaseResult(RespCodeEnum.ILLEGAL_ARG);
     }
 
-    @ExceptionHandler({SystemException.class})
-    public BaseResponse systemException(HttpServletRequest request, Exception e){
+    @ExceptionHandler({ SystemException.class, BizException.class })
+    public BaseResult systemException(HttpServletRequest request, Exception e){
         log.error("request uri[{}], exception class[{}]", request.getRequestURI(), e.getClass().getName(), e);
-        return new BaseResponse(RespCodeEnum.SYS_ERROR.getCode(), e.getMessage(), null);
-    }
-
-    @ExceptionHandler({BizException.class})
-    public BaseResponse bizException(HttpServletRequest request, Exception e){
-        log.error("request rui[{}], exception class[{}]", request.getRequestURI(), e.getClass().getName(), e);
-        return new BaseResponse(RespCodeEnum.FAIL.getCode(), e.getMessage(), null);
+        return new BaseResult(RespCodeEnum.FAIL);
     }
 
 }

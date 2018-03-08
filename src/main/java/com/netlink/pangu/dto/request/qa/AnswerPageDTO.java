@@ -10,53 +10,35 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.util.qa;
+package com.netlink.pangu.dto.request.qa;
+
+import com.netlink.pangu.dto.request.PageDTO;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotNull;
 
 /**
- * 事件类型
+ * AnswerPageDTO
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2018-03-08 20:40 fubencheng
  */
-public enum EventTypeEnum {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class AnswerPageDTO extends PageDTO {
 
-	/**
-	 * 赞
-	 */
-	THUMB_UP((byte)1, "赞"),
+    private static final long serialVersionUID = -3058127972232977054L;
 
-	/**
-	 * 踩
-	 */
-	THUMB_DOWN((byte)-1, "踩"),
+    /**
+     * 问题主键ID
+     */
+    @NotNull
+    private Long questionId;
 
-	/**
-	 * 读
-	 */
-	READ((byte) 0, "读");
-
-	private byte eventCode;
-	private String eventMsg;
-
-	EventTypeEnum(byte eventCode, String eventMsg) {
-		this.setEventCode(eventCode);
-		this.setEventMsg(eventMsg);
-	}
-
-	public byte getEventCode() {
-		return eventCode;
-	}
-
-	private void setEventCode(byte eventCode) {
-		this.eventCode = eventCode;
-	}
-
-	public String getEventMsg() {
-		return eventMsg;
-	}
-
-	private void setEventMsg(String eventMsg) {
-		this.eventMsg = eventMsg;
-	}
+    /**
+     * 排序索引值, 1-回答时间，2-回复数，3-认可数
+     */
+    private Short orderIndex;
 
 }

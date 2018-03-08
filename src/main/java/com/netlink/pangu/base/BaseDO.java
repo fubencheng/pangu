@@ -12,6 +12,7 @@
  */
 package com.netlink.pangu.base;
 
+import com.netlink.pangu.consts.BaseConst;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -32,23 +33,23 @@ public class BaseDO {
      */
     @Id
     @GeneratedValue(generator = "JDBC")
-    private Long id;
+    public Long id;
 
     /**
      * 是否逻辑删除
      */
     @Column(name = "is_delete")
-    private String isDelete = "0";
+    public String isDelete = BaseConst.NO;
 
     /**
      * 创建时间
      */
     @Column(name = "gmt_created")
-    private Date gmtCreated = new Date();
+    public Date gmtCreated;
 
     /**
      * 修改时间
      */
     @Column(name = "gmt_modified")
-    private Date gmtModified;
+    public Date gmtModified;
 }

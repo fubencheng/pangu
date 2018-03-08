@@ -35,6 +35,6 @@ public interface QaCategoryService {
 	 * 查询全部问题分类
 	 * @return List<QaCategory>
 	 */
-	List<QaCategory> findAll();
+	List<QaCategory> findByCondition(QaCategory category);
 
 }

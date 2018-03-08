@@ -10,40 +10,31 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response;
+package com.netlink.pangu.dto.response.qa;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 /**
- * 基础应答类
+ * 问题分类DTO
  *
  * @author fubencheng
- * @version 0.0.1 2017-11-30 20:45 fubencheng
+ * @version 0.0.1 2018-01-18 15:09 fubencheng Exp $
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class BaseResponse implements Serializable {
+public class QaCategoryDTO implements Serializable {
 
-	private static final long serialVersionUID = 5784851657861601192L;
+    private static final long serialVersionUID = -3486061872709170373L;
 
-	/**
-	 * 返回码
-	 */
-	protected String code = RespCodeEnum.SUCCESS.getCode();
+    /**
+     * 分类主键ID
+     */
+    private Long id;
 
-	/**
-	 * 返回信息
-	 */
-	protected String message = RespCodeEnum.SUCCESS.getMessage();
-
-	/**
-	 * 返回数据
-	 */
-	protected Object respObject;
+    /**
+     * 分类名称
+     */
+    private String categoryName;
 
 }

@@ -10,20 +10,20 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response;
+package com.netlink.pangu.dto.response;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import java.io.Serializable;
+import java.util.List;
 
 /**
- * 通用分页应答
+ * 通用分页应答.
  *
- * @author fubencheng
- * @version 0.0.1 2018-01-19 19:12 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2018-01-19 19:12 fubencheng.
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class BasePageResponse extends BaseResponse {
+public class PageResult<E> implements Serializable {
 
     private static final long serialVersionUID = -4439370182500011834L;
 
@@ -41,5 +41,14 @@ public class BasePageResponse extends BaseResponse {
      * 总记录数
      */
     private long total;
+
+    /**
+     * 结果集合
+     */
+    private List<E> elements;
+
+    public PageResult(List<E> elements){
+        this.elements = elements;
+    }
 
 }

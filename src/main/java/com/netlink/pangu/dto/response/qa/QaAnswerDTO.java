@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response.dto.qa;
+package com.netlink.pangu.dto.response.qa;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -20,30 +20,59 @@ import com.netlink.pangu.util.DateUtil;
 import lombok.Data;
 
 /**
- * 回答DTO
+ * QaAnswerDTO
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
 @Data
-public class AnswerDTO implements Serializable {
+public class QaAnswerDTO implements Serializable {
 
+	private static final long serialVersionUID = 519332054802339689L;
+
+	/**
+	 * 回答主键ID
+	 */
 	private Long id;
 
+	/**
+	 * 问题主键ID
+	 */
 	private Long questionId;
 
+	/**
+	 * 回答内容
+	 */
 	private String answer;
 
+	/**
+	 * 回答评论数
+	 */
 	private Long comments;
 
+	/**
+	 * 回答认可数
+	 */
 	private Long likes;
 
+	/**
+	 * 回答不认可数
+	 */
 	private Long dislikes;
 
+	/**
+	 * 回答人ID
+	 */
 	private String userId;
 
+	/**
+	 * 回答人姓名
+	 */
 	private String userName;
 
+	/**
+	 * 回答时间
+	 */
 	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
 	private Date gmtCreated;
 

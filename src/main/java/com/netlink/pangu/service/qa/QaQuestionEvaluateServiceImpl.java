@@ -14,11 +14,15 @@ package com.netlink.pangu.service.qa;
 
 import java.util.List;
 
+import com.netlink.pangu.consts.RespCodeEnum;
 import com.netlink.pangu.dao.QaQuestionEvaluateMapper;
 import com.netlink.pangu.domain.QaQuestionEvaluate;
+import com.netlink.pangu.exception.BizException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Condition;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * QaQuestionEvaluateServiceImpl
@@ -37,12 +41,18 @@ public class QaQuestionEvaluateServiceImpl implements QaQuestionEvaluateService 
 	}
 
 	@Override
-	public List<QaQuestionEvaluate> findByUserIdAndQuestionId(String userId, Long questionId) {
-		Condition condition = new Condition(QaQuestionEvaluate.class);
-		condition.createCriteria().andEqualTo("userId", userId)
-				.andEqualTo("questionId", questionId)
-				.andEqualTo("isDelete", '0');
-		return questionEvaluateMapper.selectByCondition(condition);
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public void save(QaQuestionEvaluate questionEvaluate) {
+		try {
+			questionEvaluateMapper.insertSelective(questionEvaluate);
+		} catch (Exception e) {
+			throw new BizException(RespCodeEnum.FAIL.getCode(), "failed to save question evaluate");
+		}
+	}
+
+	@Override
+	public List<QaQuestionEvaluate> findByCondition(QaQuestionEvaluate questionEvaluate) {
+		return questionEvaluateMapper.select(questionEvaluate);
     }
 
 }

@@ -16,7 +16,7 @@ import com.netlink.pangu.domain.QaQuestionEvaluate;
 import java.util.List;
 
 /**
- * 问题评价服务.
+ * QaQuestionEvaluateService.
  *
  * @author fubencheng.
  * @version 0.0.1 2017-11-30 20:45 fubencheng.
@@ -24,11 +24,16 @@ import java.util.List;
 public interface QaQuestionEvaluateService {
 
 	/**
-	 * 查询问题评价.
-	 * @param userId 用户ID
-	 * @param questionId 问题ID
-	 * @return 用户评价列表
+	 * 保存问题评价.
+	 * @param questionEvaluate questionEvaluate.
 	 */
-	List<QaQuestionEvaluate> findByUserIdAndQuestionId(String userId, Long questionId);
+	void save(QaQuestionEvaluate questionEvaluate);
+
+	/**
+	 * 查询问题评价.
+	 * @param questionEvaluate questionEvaluate
+	 * @return List<QaQuestionEvaluate>
+	 */
+	List<QaQuestionEvaluate> findByCondition(QaQuestionEvaluate questionEvaluate);
 
 }

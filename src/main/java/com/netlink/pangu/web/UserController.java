@@ -10,22 +10,23 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.web.user;
+package com.netlink.pangu.web;
 
-import com.netlink.pangu.response.BaseResponse;
-import com.netlink.pangu.response.dto.user.UserInfoDTO;
-import com.netlink.pangu.web.BaseController;
+import com.netlink.pangu.dto.response.BaseResult;
+import com.netlink.pangu.dto.response.user.UserInfoDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 用户信息控制器
+ * UserController
  *
  * @author fubencheng
  * @version 0.0.1 2017-12-15 19:49 fubencheng
  */
+@Slf4j
 @RestController
 public class UserController extends BaseController {
 
@@ -34,10 +35,10 @@ public class UserController extends BaseController {
 
     /**
      * 获取用户信息
-     * @return 用户信息
+     * @return BaseResult<UserInfoDTO>
      */
     @GetMapping("/user/info")
-    public BaseResponse getCurrentUser() {
+    public BaseResult<UserInfoDTO> getCurrentUserInfo() {
 
         boolean isAdmin = StringUtils.contains(userAdmin, USER);
 
@@ -45,10 +46,7 @@ public class UserController extends BaseController {
         userInfoDTO.setIsAdmin(isAdmin);
         userInfoDTO.setName(USER);
 
-        BaseResponse resp = new BaseResponse();
-        resp.setRespObject(userInfoDTO);
-
-        return resp;
+        return new BaseResult<>(userInfoDTO);
     }
 
 }

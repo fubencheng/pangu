@@ -13,28 +13,22 @@
 package com.netlink.pangu.service.qa;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.netlink.pangu.dao.QaQuestionEvaluateMapper;
-import com.netlink.pangu.dao.QaQuestionMapper;
-import com.netlink.pangu.domain.QaQuestion;
-import com.netlink.pangu.domain.QaQuestionEvaluate;
-import com.netlink.pangu.request.qa.QuestionOpsDTO;
-import com.netlink.pangu.request.qa.QuestionPageDTO;
-import com.netlink.pangu.util.qa.EventTypeEnum;
-import com.netlink.pangu.response.RespCodeEnum;
-import com.netlink.pangu.exception.BizException;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.netlink.pangu.dao.QaQuestionMapper;
+import com.netlink.pangu.domain.QaQuestion;
+import com.netlink.pangu.consts.RespCodeEnum;
+import com.netlink.pangu.dto.request.qa.QuestionPageDTO;
+import com.netlink.pangu.exception.BizException;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Condition;
 
 /**
  * QaQuestionServiceImpl
@@ -47,13 +41,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class QaQuestionServiceImpl implements QaQuestionService {
 
 	private QaQuestionMapper questionMapper;
-	private QaQuestionEvaluateMapper questionEvaluateMapper;
 
 	@Autowired
-	public QaQuestionServiceImpl(QaQuestionMapper questionMapper,
-								 QaQuestionEvaluateMapper questionEvaluateMapper){
+	public QaQuestionServiceImpl(QaQuestionMapper questionMapper){
 		this.questionMapper = questionMapper;
-		this.questionEvaluateMapper = questionEvaluateMapper;
 	}
 
 	@Override
@@ -68,81 +59,72 @@ public class QaQuestionServiceImpl implements QaQuestionService {
 	}
 
 	@Override
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
-	public void signQuestion(String userId, String userName, QuestionOpsDTO opsDTO) {
-		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType()) {
-			saveQuestionEvaluate(userId, userName, opsDTO);
-			questionMapper.updateThumbUp(opsDTO.getQuestionId());
-		}
-		if (EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
-			saveQuestionEvaluate(userId, userName, opsDTO);
-			questionMapper.updateThumbDown(opsDTO.getQuestionId());
-		}
-		if (EventTypeEnum.READ.getEventCode() == opsDTO.getEventType()) {
-			questionMapper.updateViews(opsDTO.getQuestionId());
-		}
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public int increaseThumbUp(Long questionId) {
+		return questionMapper.updateThumbUp(questionId);
 	}
 
-	private void saveQuestionEvaluate(String userId, String userName, QuestionOpsDTO opsDTO){
-		QaQuestionEvaluate evaluate = new QaQuestionEvaluate();
-		evaluate.setUserId(userId);
-		evaluate.setUserName(userName);
-		evaluate.setQuestionId(opsDTO.getQuestionId());
-		evaluate.setEvaluate(opsDTO.getEventType());
-		questionEvaluateMapper.insertSelective(evaluate);
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public int increaseThumbDown(Long questionId) {
+		return questionMapper.updateThumbDown(questionId);
 	}
 
-//	@Override
-//	public Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO) {
-//		Map<String, Object> paramMap = new HashMap<>(16);
-//		if (questionPageDTO.getCategoryId() != null && questionPageDTO.getCategoryId() != 0){
-//			paramMap.put("categoryId", questionPageDTO.getCategoryId());
-//		}
-//		if (questionPageDTO.getStartDate() != null) {
-//			paramMap.put("startTime", questionPageDTO.getStartDate());
-//		}
-//		if (questionPageDTO.getEndDate() != null) {
-//			paramMap.put("endTime", questionPageDTO.getEndDate());
-//		}
-//		String orderBy = generateOrderByClause(questionPageDTO.getOrderBy());
-//		paramMap.put("orderBy", orderBy);
-//
-//		PageHelper.startPage(questionPageDTO.getPageNum(), questionPageDTO.getPageSize(), true);
-//
-//		return (Page<QaQuestionDO>) questionDAO.findByCondition(paramMap);
-//	}
-//
-//	private String generateOrderByClause(String orderBy){
-//		StringBuilder orderBuilder = new StringBuilder();
-//		if (StringUtils.isNotBlank(orderBy)) {
-//			switch (orderBy) {
-//				case "qtime":
-//					orderBuilder.append("gmt_created desc").append(" ");
-//					break;
-//				case "ats":
-//					orderBuilder.append("answers desc").append(" ");
-//					break;
-//				case "vts":
-//					orderBuilder.append("views desc").append(" ");
-//					break;
-//				case "thumb":
-//					orderBuilder.append("thumb_up desc").append(" ");
-//					break;
-//				default:
-//					orderBuilder.append("gmt_created desc").append(" ");
-//			}
-//		} else {
-//			/*orderBuilder.append(" views desc,").append(" ");
-//			orderBuilder.append(" answers desc,").append(" ");*/
-//			orderBuilder.append(" gmt_created desc ").append(" ");
-//		}
-//
-//		return orderBuilder.toString();
-//	}
-//
-//	@Override
-//	public QaQuestionDO findById(Long id) {
-//		return questionDAO.selectByPrimaryKey(id);
-//	}
+	@Override
+
+	public int increaseViews(Long questionId) {
+		return questionMapper.updateViews(questionId);
+	}
+
+	@Override
+	public Page<QaQuestion> pageByCondition(QuestionPageDTO pageDTO) {
+		Condition condition = new Condition(QaQuestion.class);
+		Condition.Criteria criteria = condition.createCriteria();
+		if (pageDTO.getCategoryId() != null){
+			criteria.andEqualTo("categoryId", pageDTO.getCategoryId());
+		}
+		if (pageDTO.getStartDate() != null) {
+			criteria.andGreaterThanOrEqualTo("gmtCreated", pageDTO.getStartDate());
+		}
+		if (pageDTO.getEndDate() != null) {
+			criteria.andLessThan("gmtCreated", pageDTO.getEndDate());
+		}
+		String orderByClause = generateOrderByClause(pageDTO.getOrderIndex());
+		condition.setOrderByClause(orderByClause);
+
+		PageHelper.startPage(pageDTO.getPageNum(), pageDTO.getPageSize(), true);
+
+		return (Page<QaQuestion>) questionMapper.selectByCondition(condition);
+	}
+
+	private String generateOrderByClause(Short orderIndex){
+		StringBuilder orderBuilder = new StringBuilder();
+		if (orderIndex != null) {
+			switch (orderIndex) {
+				case 1:
+					orderBuilder.append(" answers desc ").append(" ");
+					break;
+				case 2:
+					orderBuilder.append(" views desc ").append(" ");
+					break;
+				case 3:
+					orderBuilder.append(" thumb_up desc ").append(" ");
+					break;
+				case 4:
+					orderBuilder.append(" gmt_created desc ").append(" ");
+					break;
+				default:
+					orderBuilder.append(" gmt_created desc ").append(" ");
+			}
+		} else {
+			orderBuilder.append(" gmt_created desc ").append(" ");
+		}
+		return orderBuilder.toString();
+	}
+
+	@Override
+	public QaQuestion findById(Long id) {
+		return questionMapper.selectByPrimaryKey(id);
+	}
 
 }

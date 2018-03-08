@@ -14,7 +14,7 @@
 package com.netlink.pangu.web;
 
 /**
- * 基础控制器.
+ * BaseController.
  *
  * @author fubencheng.
  * @version 0.0.1 2018-02-25 12:40 fubencheng.

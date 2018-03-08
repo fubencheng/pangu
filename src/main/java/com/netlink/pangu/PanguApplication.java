@@ -17,10 +17,10 @@ import javax.servlet.MultipartConfigElement;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 应用启动入口，开启事务管理，扫描加载mybatis mapper接口
+ * 应用启动入口，开启事务管理，扫描加载mybatis mapper接口.
  *
- * @author fubencheng
- * @version 0.0.1 2018-01-06 16:19 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2018-01-06 16:19 fubencheng.
  */
 @Configuration
 @EnableTransactionManagement
@@ -45,36 +45,36 @@ public class PanguApplication {
     private String bucketName;
 
     /**
-     * 阿里云服务配置
+     * OssUtil
      * @return OssUtil
      */
-//    @Bean
-//    public OssUtil ossUtil() {
-//        OssUtil ossUtil = new OssUtil();
-//        ossUtil.setAccessId(accessId);
-//        ossUtil.setAccessKey(accessKey);
-//        ossUtil.setBucketName(bucketName);
-//        ossUtil.setEndpoint(endpoint);
-//        ossUtil.setBucketPublicReadable();
-//        return ossUtil;
-//    }
+    @Bean
+    public OssUtil ossUtil() {
+        OssUtil ossUtil = new OssUtil();
+        ossUtil.setAccessId(accessId);
+        ossUtil.setAccessKey(accessKey);
+        ossUtil.setBucketName(bucketName);
+        ossUtil.setEndpoint(endpoint);
+        ossUtil.setBucketPublicReadable();
+        return ossUtil;
+    }
 
     /**
-     * 阿里云服务客户端配置
+     * OssClientConfiguration
      * @return ClientConfiguration
      */
-//    @Bean
-//    public ClientConfiguration printOssClientConfig() {
-//        ClientConfiguration printOssClientConfig = new ClientConfiguration();
-//        printOssClientConfig.setMaxConnections(100);
-//        printOssClientConfig.setSocketTimeout(5000);
-//        printOssClientConfig.setConnectionTimeout(5000);
-//        printOssClientConfig.setMaxErrorRetry(3);
-//        return printOssClientConfig;
-//    }
+    @Bean
+    public ClientConfiguration printOssClientConfig() {
+        ClientConfiguration printOssClientConfig = new ClientConfiguration();
+        printOssClientConfig.setMaxConnections(100);
+        printOssClientConfig.setSocketTimeout(5000);
+        printOssClientConfig.setConnectionTimeout(5000);
+        printOssClientConfig.setMaxErrorRetry(3);
+        return printOssClientConfig;
+    }
 
     /**
-     * HTTP请求参数验证配置
+     * MethodValidationPostProcessor
      * @return MethodValidationPostProcessor
      */
     @Bean
@@ -83,7 +83,7 @@ public class PanguApplication {
     }
 
     /**
-     * 线程池配置
+     * ThreadPoolTaskExecutor
      * @return ThreadPoolTaskExecutor
      */
     @Bean
@@ -98,7 +98,7 @@ public class PanguApplication {
     }
 
     /**
-     * 文件上传配置
+     * MultipartConfigElement
      * @return MultipartConfigElement
      */
     @Bean
@@ -106,13 +106,12 @@ public class PanguApplication {
         MultipartConfigFactory configFactory = new MultipartConfigFactory();
         // 上传文件临时路径
         configFactory.setLocation("/alidata1/admin/upload/temp");
-        // 最大文件大小，100MB
-        configFactory.setMaxFileSize("100MB");
-        // 最大请求大小，300MB
-        configFactory.setMaxRequestSize("300MB");
+        // 最大文件大小，50MB
+        configFactory.setMaxFileSize("20MB");
+        // 最大请求大小，80MB
+        configFactory.setMaxRequestSize("80MB");
         // 最大文件个数，3个
         configFactory.setFileSizeThreshold(3);
-
         return configFactory.createMultipartConfig();
     }
 

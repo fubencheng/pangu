@@ -16,7 +16,7 @@ package com.netlink.pangu.exception;
  * 通用系统异常
  *
  * @author fubencheng
- * @version v0.1 2018-01-19 16:49 fubencheng Exp $
+ * @version 0.0.1 2018-01-19 16:49 fubencheng
  */
 public class SystemException extends RuntimeException {
 

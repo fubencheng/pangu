@@ -10,24 +10,29 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response.dto.qa;
+package com.netlink.pangu.service.qa;
 
-import com.netlink.pangu.response.BasePageResponse;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-import java.util.List;
+import com.github.pagehelper.Page;
+import com.netlink.pangu.domain.QaAnswer;
+import com.netlink.pangu.dto.request.qa.AnswerPageDTO;
 
 /**
- * 问题分页DAO
+ * QaAnswerService
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-public class QuestionPageResponse extends BasePageResponse {
+public interface QaAnswerService {
 
-	private List<QuestionDTO> questionDTOList;
+//	void saveAnswer(QaAnswer qaAnswer);
+//
+//	void signAnswer(Long id, Integer eventType);
+
+	/**
+	 * 分页查询问题回答
+	 * @param pageDTO pageDTO
+	 * @return Page<QaAnswer>
+	 */
+	Page<QaAnswer> pageByCondition(AnswerPageDTO pageDTO);
 
 }

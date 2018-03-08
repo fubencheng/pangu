@@ -16,10 +16,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 日期工具类
+ * 日期工具类.
  *
- * @author fubencheng
- * @version 0.0.1 2017-11-30 20:45 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2017-11-30 20:45 fubencheng.
  */
 public class DateUtil {
 

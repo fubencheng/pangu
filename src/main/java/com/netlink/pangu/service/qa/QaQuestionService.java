@@ -14,8 +14,7 @@ package com.netlink.pangu.service.qa;
 
 import com.github.pagehelper.Page;
 import com.netlink.pangu.domain.QaQuestion;
-import com.netlink.pangu.request.qa.QuestionOpsDTO;
-import com.netlink.pangu.request.qa.QuestionPageDTO;
+import com.netlink.pangu.dto.request.qa.QuestionPageDTO;
 
 /**
  * QaQuestionService.
@@ -32,15 +31,38 @@ public interface QaQuestionService {
 	void save(QaQuestion question);
 
 	/**
-	 * 记录问题赞、踩、读操作
-	 * @param userId userId
-	 * @param userName userName
-	 * @param opsDTO opsDTO
+	 * 累加点赞数
+	 * @param questionId questionId
+	 * @return int
 	 */
-	void signQuestion(String userId, String userName, QuestionOpsDTO opsDTO);
+	int increaseThumbUp(Long questionId);
 
-//	Page<QaQuestionDO> pageQuestionByCondition(QuestionPageDTO questionPageDTO);
-//
-//	QaQuestionDO findById(Long id);
+	/**
+	 * 累加点踩数
+	 * @param questionId questionId
+	 * @return int
+	 */
+	int increaseThumbDown(Long questionId);
+
+	/**
+	 * 累加阅读数
+	 * @param questionId questionId
+	 * @return int
+	 */
+	int increaseViews(Long questionId);
+
+	/**
+	 * 分页查询问题记录
+	 * @param pageDTO pageDTO
+	 * @return Page<QaQuestion>
+	 */
+	Page<QaQuestion> pageByCondition(QuestionPageDTO pageDTO);
+
+	/**
+	 * 主键查询
+	 * @param id id
+	 * @return QaQuestion
+	 */
+	QaQuestion findById(Long id);
 
 }

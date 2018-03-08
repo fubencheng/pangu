@@ -41,22 +41,19 @@
 
   <update id="updateThumbUp" parameterType="java.lang.Long">
     UPDATE qa_question
-    SET thumb_up = thumb_up + 1
+    SET thumb_up = thumb_up + 1, gmt_modified = now()
     WHERE id = #{questionId}
-    AND gmt_modified = now()
   </update>
 
   <update id="updateThumbDown" parameterType="java.lang.Long">
     UPDATE qa_question
-    SET thumb_down = thumb_down + 1
+    SET thumb_down = thumb_down + 1, gmt_modified = now()
     WHERE id = #{questionId}
-    AND gmt_modified = now()
   </update>
 
   <update id="updateViews" parameterType="java.lang.Long">
     UPDATE qa_question
-    SET views = views + 1
+    SET views = views + 1, gmt_modified = now()
     WHERE id = #{questionId}
-    AND gmt_modified = now()
   </update>
 </mapper>

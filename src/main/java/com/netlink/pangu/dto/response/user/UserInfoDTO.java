@@ -10,55 +10,31 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response;
+package com.netlink.pangu.dto.response.user;
+
+import lombok.Data;
+
+import java.io.Serializable;
 
 /**
- * 应答码枚举
+ * UserInfoDTO
  *
  * @author fubencheng
- * @version 0.0.1 2017-11-30 20:45 fubencheng
+ * @version 0.0.1 2018-01-08 11:23 fubencheng
  */
-public enum RespCodeEnum {
+@Data
+public class UserInfoDTO implements Serializable {
+
+    private static final long serialVersionUID = 1839320279263974343L;
 
     /**
-     * 成功
+     * 用户名
      */
-	SUCCESS("000", "操作成功"),
+    private String name;
 
     /**
-     * 重复的操作
+     * 是否是管理员
      */
-    DUPLICATE("001","重复的操作"),
+    private Boolean isAdmin;
 
-    /**
-     * 参数异常
-     */
-    ILLEGAL_ARG("0001", "参数异常"),
-
-    /**
-     * 系统异常
-     */
-    SYS_ERROR("0002", "系统异常"),
-
-    /**
-     * 失败
-     */
-	FAIL("999", "操作失败");
-
-	private String code;
-	private String message;
-
-	RespCodeEnum(String code, String message){
-	    this.code = code;
-	    this.message = message;
-    }
-
-    public String getCode(){
-	    return code;
-    }
-
-    public String getMessage(){
-        return message;
-    }
-	
 }

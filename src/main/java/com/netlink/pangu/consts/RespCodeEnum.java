@@ -10,25 +10,55 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.service.qa;
-
-import java.util.Map;
-
-import com.github.pagehelper.Page;
-import com.netlink.pangu.domain.QaAnswer;
+package com.netlink.pangu.consts;
 
 /**
- * 回答服务
+ * 应答码枚举
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-public interface AnswerService {
+public enum RespCodeEnum {
 
-	void saveAnswer(QaAnswer qaAnswer);
+    /**
+     * 成功
+     */
+	SUCCESS("000", "操作成功"),
 
-	void signAnswer(Long id, Integer eventType);
+    /**
+     * 参数异常
+     */
+    ILLEGAL_ARG("001", "参数异常"),
 
-	Page<QaAnswer> pageAnswerByCondition(Map<String, Object> condition);
+    /**
+     * 失败
+     */
+	FAIL("999", "操作失败"),
 
+    /**
+     * 问答模块，已经点过赞
+     */
+    ALREADY_THUMBSUP("1000", "已经点过赞"),
+
+    /**
+     * 问答模块，已经点过踩
+     */
+    ALREADY_THUMBSDOWN("1001", "已经点过踩");
+
+	private String code;
+	private String message;
+
+	RespCodeEnum(String code, String message){
+	    this.code = code;
+	    this.message = message;
+    }
+
+    public String getCode(){
+	    return code;
+    }
+
+    public String getMessage(){
+        return message;
+    }
+	
 }

@@ -139,7 +139,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <forkMode>once</forkMode>
                 </configuration>
             </plugin>
             <plugin>
@@ -161,6 +160,13 @@
                 <configuration>
                     <mainClass>com.netlink.pangu.PanguApplication</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>

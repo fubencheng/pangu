@@ -36,10 +36,10 @@ import com.aliyun.openservices.oss.model.ObjectListing;
 import com.aliyun.openservices.oss.model.ObjectMetadata;
 
 /**
- * aliyun oss 文件工具类
+ * OssUtil.
  *
- * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @author fubencheng.
+ * @version 0.0.1 2017-11-30 20:45 fubencheng.
  */
 @Slf4j
 @Data
@@ -116,7 +116,7 @@ public class OssUtil {
 	 *
 	 * @param file 文件
 	 * @param objectKey 文件对象Key
-	 * @return
+	 * @return filePath
 	 */
 	public String uploadFile(MultipartFile file, String objectKey) {
 		try {
@@ -135,7 +135,7 @@ public class OssUtil {
 	 *
 	 * @param in 文件输入流
 	 * @param objectKey 文件对象Key
-	 * @return
+	 * @return filePath
 	 */
 	public String uploadFile(InputStream in, long size, String objectKey) {
 		log.info("OSS uploadFile params:in[" + in + "], size[" + size + "], objectkey[" + objectKey + "]");
@@ -154,7 +154,7 @@ public class OssUtil {
 	 *
 	 * @param in 文件输入流
 	 * @param objectKey 文件对象Key
-	 * @return
+	 * @return filePath
 	 */
 	public String uploadFile(InputStream in, String objectKey) {
 		try {
@@ -168,21 +168,21 @@ public class OssUtil {
 	/**
 	 * 从OSS下载文件
 	 *
-	 * @param objectkey 文件对象Key
+	 * @param objectKey 文件对象Key
 	 * @param fileName 文件名
 	 */
-	public void downloadFile(String objectkey, String fileName) {
-		getClient().getObject(new GetObjectRequest(bucketName, objectkey), new File(fileName));
+	public void downloadFile(String objectKey, String fileName) {
+		getClient().getObject(new GetObjectRequest(bucketName, objectKey), new File(fileName));
 	}
 
 	/**
 	 * 从OSS下载内容到指定文件
 	 *
-	 * @param objectkey 文件对象Key
+	 * @param objectKey 文件对象Key
 	 * @param file 文件
 	 */
-	public void downloadFile(String objectkey, File file) {
-		getClient().getObject(new GetObjectRequest(bucketName, objectkey), file);
+	public void downloadFile(String objectKey, File file) {
+		getClient().getObject(new GetObjectRequest(bucketName, objectKey), file);
 	}
 
 	/**

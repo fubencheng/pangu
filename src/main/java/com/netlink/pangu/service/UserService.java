@@ -11,13 +11,13 @@
  *  See the License for the specific language governing permissions and  
  *  limitations under the License.  
  */
-package com.netlink.pangu.service.user;
+package com.netlink.pangu.service;
 
 /**
- * 用户信息服务.
+ * UserService.
  *
- * @author fubencheng
- * @version 0.0.1 2018-02-25 12:17 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2018-02-25 12:17 fubencheng.
  */
 public interface UserService {
 

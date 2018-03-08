@@ -10,29 +10,24 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.request;
-
-import lombok.Data;
-
-import java.io.Serializable;
+package com.netlink.pangu.consts;
 
 /**
- * 通用分页DTO
+ * 通用常量.
  *
- * @author fubencheng
- * @version 0.0.1 2018-01-19 19:03 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2018-03-07 18:15 fubencheng.
  */
-@Data
-public class BasePageDTO implements Serializable {
+public final class BaseConst {
 
     /**
-     * 页码
+     * YES
      */
-    protected Integer pageNum = 1;
+    public static final String YES = "1";
 
     /**
-     * 每页最大记录数
+     * NO
      */
-    protected Integer pageSize = 20;
+    public static final String NO = "0";
 
 }

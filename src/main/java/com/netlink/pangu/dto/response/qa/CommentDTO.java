@@ -10,24 +10,44 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response.dto.qa;
+package com.netlink.pangu.dto.response.qa;
 
-import com.netlink.pangu.response.BasePageResponse;
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.netlink.pangu.util.DateUtil;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 /**
- * 评论分页应答
+ * 评论DTO
  *
  * @author fubencheng
  * @version v0.1 2017-11-30 20:45 fubencheng Exp $
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class CommentPageResponse extends BasePageResponse {
+public class CommentDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-	private List<CommentDTO> commentList;
+	private Long id;
 
+	private String userId;
+
+	private String userName;
+
+	private Long answerId;
+
+	private String comment;
+
+	private Long replyToCommentId;
+
+	private String replyToUserId;
+
+	private String replyToUserName;
+
+	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
+	private Date createTime;
+
+	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
+	private Date gmtCreated;
 }

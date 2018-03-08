@@ -16,7 +16,6 @@ import com.netlink.pangu.dao.QaCategoryMapper;
 import com.netlink.pangu.domain.QaCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Condition;
 
 import java.util.List;
 
@@ -42,10 +41,8 @@ public class QaCategoryServiceImpl implements QaCategoryService {
 	}
 
 	@Override
-	public List<QaCategory> findAll() {
-		Condition condition = new Condition(QaCategory.class);
-		condition.createCriteria().andEqualTo("isDelete", "0");
-		return categoryMapper.selectByCondition(condition);
+	public List<QaCategory> findByCondition(QaCategory category) {
+		return categoryMapper.select(category);
 	}
 
 }

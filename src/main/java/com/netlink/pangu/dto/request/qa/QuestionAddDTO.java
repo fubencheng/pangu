@@ -10,44 +10,41 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response.dto.qa;
+package com.netlink.pangu.dto.request.qa;
 
-import java.io.Serializable;
-import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.netlink.pangu.util.DateUtil;
 import lombok.Data;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
- * 评论DTO
+ * 问题添加DTO
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2018-01-18 15:26 fubencheng
  */
 @Data
-public class CommentDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class QuestionAddDTO implements Serializable {
 
-	private Long id;
+    private static final long serialVersionUID = -6264877046106262834L;
 
-	private String userId;
+    /**
+     * 分类ID
+     */
+    @NotNull
+    private Long categoryId;
 
-	private String userName;
+    /**
+     * 问题标题
+     */
+    @NotBlank
+    private String title;
 
-	private Long answerId;
+    /**
+     * 问题内容
+     */
+    @NotBlank
+    private String question;
 
-	private String comment;
-
-	private Long replyToCommentId;
-
-	private String replyToUserId;
-
-	private String replyToUserName;
-
-	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
-	private Date createTime;
-
-	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
-	private Date gmtCreated;
 }

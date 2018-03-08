@@ -10,12 +10,13 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.web.qa;
+package com.netlink.pangu.web;
 
 import com.netlink.pangu.domain.QaCategory;
-import com.netlink.pangu.response.BaseResponse;
-import com.netlink.pangu.response.dto.qa.QaCategoryDTO;
+import com.netlink.pangu.dto.response.BaseResult;
+import com.netlink.pangu.dto.response.qa.QaCategoryDTO;
 import com.netlink.pangu.service.qa.QaCategoryService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * QaCategoryController
+ * QaCategoryController.
  *
- * @author fubencheng
- * @version 0.0.1 2017-11-30 20:45 fubencheng
+ * @author fubencheng.
+ * @version 0.0.1 2017-11-30 20:45 fubencheng.
  */
 @RestController
 @RequestMapping("/qa/category")
@@ -43,23 +44,19 @@ public class QaCategoryController {
 
 	/**
 	 * 查询问题分类
-	 * @return BaseResponse
+	 * @return BaseResult<List<QaCategoryDTO>>
 	 */
 	@GetMapping("/list")
-	public BaseResponse getQaCategoryList() {
-		List<QaCategory> categoryDOList = categoryService.findAll();
+	public BaseResult<List<QaCategoryDTO>> getQaCategoryList() {
+		QaCategory category = new QaCategory();
+		List<QaCategory> categoryDOList = categoryService.findByCondition(category);
 		List<QaCategoryDTO> categoryList = new ArrayList<>();
 		for (QaCategory categoryDO : categoryDOList){
 			QaCategoryDTO categoryDTO = new QaCategoryDTO();
-			categoryDTO.setId(categoryDO.getId());
-			categoryDTO.setCategoryName(categoryDO.getCategoryName());
+			BeanUtils.copyProperties(categoryDO, categoryDTO);
 			categoryList.add(categoryDTO);
 		}
-
-		BaseResponse resp = new BaseResponse();
-		resp.setRespObject(categoryList);
-
-		return resp;
+		return new BaseResult<>(categoryList);
 	}
 
 }

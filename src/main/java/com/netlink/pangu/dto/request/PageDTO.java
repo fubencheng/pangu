@@ -10,24 +10,29 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.response.dto.qa;
+package com.netlink.pangu.dto.request;
 
-import com.netlink.pangu.response.BasePageResponse;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-import java.util.List;
+import java.io.Serializable;
 
 /**
- * 回答分页应答
+ * 通用分页DTO
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2018-01-19 19:03 fubencheng
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class AnswerPageResponse extends BasePageResponse {
+public class PageDTO implements Serializable {
 
-	private List<AnswerDTO> answerList;
+    /**
+     * 页码
+     */
+    protected Integer pageNum = 1;
+
+    /**
+     * 每页最大记录数
+     */
+    protected Integer pageSize = 20;
 
 }

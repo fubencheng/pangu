@@ -16,7 +16,7 @@ package com.netlink.pangu.exception;
  * 通用业务异常
  *
  * @author fubencheng
- * @version v0.1 2018-01-19 17:43 fubencheng Exp $
+ * @version 0.0.1 2018-01-19 17:43 fubencheng
  */
 public class BizException extends RuntimeException {
 

@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.request.qa;
+package com.netlink.pangu.dto.request.qa;
 
 import lombok.Data;
 
@@ -35,9 +35,9 @@ public class QuestionOpsDTO implements Serializable {
     private Long questionId;
 
     /**
-     * 操作类型，-1:踩,1:赞
+     * 操作类型，-1:踩, 0:读, 1:赞
      */
     @NotNull
-    private Byte eventType;
+    private Byte ops;
 
 }
