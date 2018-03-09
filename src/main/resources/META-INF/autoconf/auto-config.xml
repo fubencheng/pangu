@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config description="自动配置：netlink-pangu" xmlns:j="jelly:core">
+
+	<group name="basic-setting">
+        <property name="basic.domain" defaultValue="netlink.com" description="应用域名" />
+        <property name="basic.mode" defaultValue="DEV" description="应用的部署状态（DEV,PRE,PRD）" />
+        <property name="basic.application" defaultValue="pangu" description="应用服务名称" />
+    </group>
+    
+    <group name="log-setting">
+        <property name="log.dir" defaultValue="/Users/ben/alidata1/admin/logs/pangu" description="log输出目录" />
+        <property name="log.level" defaultValue="INFO" description="log输出级别" />
+    </group>
+
+	<script>
+		<generate template="logback.xml" charset="UTF-8" />
+		<generate template="application.properties" charset="UTF-8" />
+	</script>
+</config>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 只需配置好 log.dir 和 projectname 属性 -->
+<!-- 只需配置好 log.dir 和 application 属性 -->
 <configuration debug="false">
-	<property name="log.dir" value="/Users/ben/alidata1/admin/logs/pangu" />
-	<property name="projectname" value="pangu" />
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<target>System.out</target>
 		<encoder charset="UTF-8">
@@ -12,7 +10,7 @@
 
 	<appender name="infoAppender"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${log.dir}/${HOSTNAME}_${projectname}-ss_micro_app_stargateadmin_lt_info.log
+		<file>${log.dir}/${basic.application}-ss_micro_app_stargateadmin_lt_info.log
 		</file>
 		<!-- <filter class="ch.qos.logback.classic.filter.LevelFilter"> <level>INFO</level> 
 			<onMatch>ACCEPT</onMatch> <onMismatch>DENY</onMismatch> </filter> -->
@@ -20,7 +18,7 @@
 			<level>INFO</level>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${log.dir}/${HOSTNAME}_${projectname}-ss_micro_app_stargateadmin_lt_info_%d{yyyy-MM-dd}.log
+			<fileNamePattern>${log.dir}/${basic.application}-ss_micro_app_stargateadmin_lt_info_%d{yyyy-MM-dd}.log
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
@@ -33,13 +31,13 @@
 
 	<appender name="errorAppender"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${log.dir}/${HOSTNAME}_${projectname}-ss_micro_app_stargateadmin_lt_error.log
+		<file>${log.dir}/${basic.application}-ss_micro_app_stargateadmin_lt_error.log
 		</file>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>WARN</level>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${log.dir}/${HOSTNAME}_${projectname}-ss_micro_app_stargateadmin_lt_error_%d{yyyy-MM-dd}.log
+			<fileNamePattern>${log.dir}/${basic.application}-ss_micro_app_stargateadmin_lt_error_%d{yyyy-MM-dd}.log
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
