@@ -13,18 +13,20 @@
 package com.netlink.pangu.dto.request.qa;
 
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * 问题添加DTO
+ * QuestionAddDTO
  *
  * @author fubencheng
  * @version 0.0.1 2018-01-18 15:26 fubencheng
  */
 @Data
+@ToString
 public class QuestionAddDTO implements Serializable {
 
     private static final long serialVersionUID = -6264877046106262834L;

@@ -15,6 +15,7 @@ package com.netlink.pangu.dto.request.qa;
 import com.netlink.pangu.dto.request.PageDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
 
@@ -25,6 +26,7 @@ import javax.validation.constraints.NotNull;
  * @version 0.0.1 2018-03-08 20:40 fubencheng
  */
 @Data
+@ToString
 @EqualsAndHashCode(callSuper = true)
 public class AnswerPageDTO extends PageDTO {
 

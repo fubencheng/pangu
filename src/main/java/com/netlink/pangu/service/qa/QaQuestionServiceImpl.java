@@ -12,8 +12,6 @@
  */
 package com.netlink.pangu.service.qa;
 
-import java.util.Date;
-
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.netlink.pangu.dao.QaQuestionMapper;
@@ -50,10 +48,10 @@ public class QaQuestionServiceImpl implements QaQuestionService {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
 	public void save(QaQuestion question) {
-		question.setGmtCreated(new Date());
 		try {
 			questionMapper.insertSelective(question);
 		} catch (Exception e){
+			log.error("save question failed, question={}", question.getQuestion(), e);
 			throw new BizException(RespCodeEnum.FAIL.getCode(), "failed to save question");
 		}
 	}

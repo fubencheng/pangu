@@ -16,17 +16,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.pagehelper.Page;
+import com.netlink.pangu.consts.RespCodeEnum;
 import com.netlink.pangu.domain.QaAnswer;
-import com.netlink.pangu.dto.request.qa.AnswerPageDTO;
+import com.netlink.pangu.domain.QaAnswerComment;
+import com.netlink.pangu.domain.QaAnswerEvaluate;
+import com.netlink.pangu.dto.request.qa.*;
+import com.netlink.pangu.dto.response.BaseResult;
 import com.netlink.pangu.dto.response.PageResult;
+import com.netlink.pangu.dto.response.qa.QaAnswerCommentDTO;
 import com.netlink.pangu.dto.response.qa.QaAnswerDTO;
+import com.netlink.pangu.service.qa.QaAnswerCommentService;
+import com.netlink.pangu.service.qa.QaAnswerEvaluateService;
 import com.netlink.pangu.service.qa.QaAnswerService;
+import com.netlink.pangu.service.qa.QaQuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -41,65 +47,113 @@ import javax.validation.Valid;
 @RequestMapping("/qa/answer")
 public class QaAnswerController extends BaseController {
 
+	/**
+	 * 赞
+	 */
+	private static final byte ZAN = 1;
+
+	/**
+	 * 踩
+	 */
+	private static final byte CAI = -1;
+
+
 	private QaAnswerService answerService;
+	private QaQuestionService questionService;
+	private QaAnswerEvaluateService answerEvaluateService;
+	private QaAnswerCommentService answerCommentService;
 
     @Autowired
-	public QaAnswerController(QaAnswerService answerService){
+	public QaAnswerController(QaAnswerService answerService,
+							  QaQuestionService questionService,
+							  QaAnswerEvaluateService answerEvaluateService,
+							  QaAnswerCommentService answerCommentService){
 	    this.answerService = answerService;
+	    this.questionService = questionService;
+	    this.answerEvaluateService = answerEvaluateService;
+		this.answerCommentService = answerCommentService;
     }
 
-//	@PostMapping("/save")
-//	public BaseResponse saveAnswer(HttpServletRequest request, @RequestBody AnswerDTO answer) {
-//        SessionUser sessionUser = userService.getUser(request);
-//		String userNo = sessionUser.getStaffNo();
-//		String userName = sessionUser.getName();
-//
-//		QaAnswerDO answerModel = new QaAnswerDO();
-//		answerModel.setUserId(userNo);
-//		answerModel.setUserName(userName);
-//		answerModel.setQuestionId(answer.getQuestionId());
-//		// 过滤掉emoji表情编码
-//		String answerEmoji = answer.getAnswer()
-//				.replaceAll("[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]", "");
-//		answerModel.setAnswer(answerEmoji);
-//		try {
-//			answerService.saveAnswer(answerModel);
-//			return new BaseResponse(RespCodeEnum.SUCCESS.getCode(), RespCodeEnum.SUCCESS.getMessage());
-//		} catch (Exception e) {
-//			log.error("Failed to save answer, userName={}, questionId={}, e={}", userName, answer.getQuestionId(), e);
-//			return new BaseResponse(RespCodeEnum.FAIL.getCode(), RespCodeEnum.FAIL.getMessage());
-//		}
-//	}
-//
-//	@PostMapping("/sign")
-//	public BaseResponse signAnswer(HttpServletRequest request, @RequestBody Map<String, Object> params) {
-//		Long answerId = Long.parseLong(params.get("answerId").toString());
-//		Integer eventType = Integer.parseInt(params.get("eventType").toString());
-//		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType || EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
-//			SessionUser sessionUser = SessionUserUtil.getCurrentUser(request);
-//			if(sessionUser == null){
-//				sessionUser= userService.getUser(request);
-//			}
-//			String userNo = sessionUser.getStaffNo();
-//			String userName = sessionUser.getName();
-//			QaAnswerEvaluateDO evaluate = answerEvaluateService.findByUserIdAndAnswerIdAndEvaluate(userNo, answerId, eventType);
-//			if (evaluate == null) {
-//				evaluate = new QaAnswerEvaluateDO();
-//				evaluate.setUserId(userNo);
-//				evaluate.setUserName(userName);
-//				evaluate.setAnswerId(answerId);
-//				evaluate.setEvaluate(eventType);
-//                answerEvaluateService.saveEavluate(evaluate);
-//				answerService.signAnswer(answerId, eventType);
-//				return new BaseResponse(RespCodeEnum.SUCCESS.getCode(), RespCodeEnum.SUCCESS.getMessage());
-//			} else {
-//				return new BaseResponse(RespCodeEnum.FAIL.getCode(), RespCodeEnum.FAIL.getMessage());
-//			}
-//		}
-//
-//		return new BaseResponse(RespCodeEnum.SUCCESS.getCode(), RespCodeEnum.SUCCESS.getMessage());
-//	}
+	/**
+	 * 保存回答
+	 * @param answerAddDTO answerAddDTO
+	 * @return BaseResult
+	 */
+	@PostMapping("/save")
+	public BaseResult save(@Valid @RequestBody AnswerAddDTO answerAddDTO) {
+		log.info("save answer, answer={}", answerAddDTO);
+		if (questionService.findById(answerAddDTO.getQuestionId()) == null){
+			return new BaseResult(RespCodeEnum.ILLEGAL_ARG);
+		}
 
+		QaAnswer answer = new QaAnswer();
+		answer.setUserId(USER_NO);
+		answer.setUserName(USER);
+		answer.setQuestionId(answerAddDTO.getQuestionId());
+		// 过滤掉emoji表情编码
+		String answerEmoji = answerAddDTO.getAnswer()
+				.replaceAll("[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]", "");
+		answer.setAnswer(answerEmoji);
+		answerService.save(answer);
+		return new BaseResult(RespCodeEnum.SUCCESS);
+	}
+
+	/**
+	 * 回答赞踩记录计数
+	 * @param opsDTO opsDTO
+	 * @return BaseResult
+	 */
+	@PostMapping("/sign")
+	public BaseResult signAnswer(@Valid @RequestBody AnswerOpsDTO opsDTO) {
+		log.info("sign answer, ops={}", opsDTO);
+		if (answerService.findById(opsDTO.getAnswerId()) == null){
+			return new BaseResult(RespCodeEnum.ILLEGAL_ARG);
+		}
+		if (ZAN == opsDTO.getOps()) {
+			QaAnswerEvaluate condition = new QaAnswerEvaluate();
+			condition.setAnswerId(opsDTO.getAnswerId());
+			condition.setUserId(USER_NO);
+			condition.setEvaluate(ZAN);
+			List<QaAnswerEvaluate> evaluateList = answerEvaluateService.findByCondition(condition);
+			if (evaluateList.isEmpty()) {
+				saveAnswerEavluate(opsDTO);
+				answerService.increaseLikes(opsDTO);
+				return new BaseResult(RespCodeEnum.SUCCESS);
+			} else {
+				return new BaseResult(RespCodeEnum.ALREADY_LIKE);
+			}
+		}
+		if (CAI == opsDTO.getOps()){
+			QaAnswerEvaluate condition = new QaAnswerEvaluate();
+			condition.setAnswerId(opsDTO.getAnswerId());
+			condition.setUserId(USER_NO);
+			condition.setEvaluate(CAI);
+			List<QaAnswerEvaluate> evaluateList = answerEvaluateService.findByCondition(condition);
+			if (evaluateList.isEmpty()) {
+				saveAnswerEavluate(opsDTO);
+				answerService.increaseDislikes(opsDTO);
+				return new BaseResult(RespCodeEnum.SUCCESS);
+			} else {
+				return new BaseResult(RespCodeEnum.ALREADY_DISLIKE);
+			}
+		}
+		return new BaseResult(RespCodeEnum.SUCCESS);
+	}
+
+	private void saveAnswerEavluate(AnswerOpsDTO opsDTO){
+		QaAnswerEvaluate evaluate = new QaAnswerEvaluate();
+		evaluate.setUserId(USER_NO);
+		evaluate.setUserName(USER);
+		evaluate.setAnswerId(opsDTO.getAnswerId());
+		evaluate.setEvaluate(opsDTO.getOps());
+		answerEvaluateService.save(evaluate);
+	}
+
+	/**
+	 * 分页查询回答列表
+	 * @param pageDTO pageDTO
+	 * @return PageResult<QaAnswerDTO>
+	 */
 	@GetMapping("/list")
 	public PageResult<QaAnswerDTO> getAnswerList(@Valid AnswerPageDTO pageDTO) {
 		Page<QaAnswer> page = answerService.pageByCondition(pageDTO);
@@ -113,6 +167,45 @@ public class QaAnswerController extends BaseController {
 		result.setTotal(page.getTotal());
 		result.setPageNum(page.getPageNum());
 		result.setPageSize(page.getPageSize());
+		return result;
+	}
+
+	@PostMapping("/comment/save")
+	public BaseResult saveAnswerComment(@Valid @RequestBody AnswerCommentAddDTO commentAddDTO) {
+		log.info("save answer comment, params={}", commentAddDTO);
+		if (answerService.findById(commentAddDTO.getAnswerId()) == null){
+			return new BaseResult(RespCodeEnum.ILLEGAL_ARG);
+		}
+
+		QaAnswerComment answerComment = new QaAnswerComment();
+		answerComment.setUserId(USER_NO);
+		answerComment.setUserName(USER);
+		answerComment.setAnswerId(commentAddDTO.getAnswerId());
+		answerComment.setComment(commentAddDTO.getComment());
+		answerComment.setReplyToCommentId(commentAddDTO.getReplyToCommentId());
+		if (commentAddDTO.getReplyToCommentId() != null){
+			QaAnswerComment originComment =answerCommentService.findById(commentAddDTO.getReplyToCommentId());
+			answerComment.setReplyToUserId(originComment.getUserId());
+			answerComment.setReplyToUserName(originComment.getUserName());
+
+		}
+		answerCommentService.save(answerComment);
+		return new BaseResult(RespCodeEnum.SUCCESS);
+	}
+
+	@GetMapping("/comment/list")
+	public PageResult getAnswerCommentList(@Valid AnswerCommentPageDTO pageDTO) {
+		Page<QaAnswerComment> commentList = answerCommentService.pageByCondition(pageDTO);
+		List<QaAnswerCommentDTO> commentDTOList = new ArrayList<>();
+		for (QaAnswerComment comment : commentList) {
+			QaAnswerCommentDTO commentDTO = new QaAnswerCommentDTO();
+			BeanUtils.copyProperties(comment, commentDTO);
+			commentDTOList.add(commentDTO);
+		}
+		PageResult result = new PageResult<>(commentDTOList);
+		result.setPageNum(commentList.getPageNum());
+		result.setPageSize(commentList.getPageSize());
+		result.setTotal(commentList.getTotal());
 		return result;
 	}
 

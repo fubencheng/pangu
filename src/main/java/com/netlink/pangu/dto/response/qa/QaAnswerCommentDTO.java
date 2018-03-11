@@ -10,52 +10,69 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.service.qa;
+package com.netlink.pangu.dto.response.qa;
 
-import com.github.pagehelper.Page;
-import com.netlink.pangu.domain.QaAnswer;
-import com.netlink.pangu.dto.request.qa.AnswerOpsDTO;
-import com.netlink.pangu.dto.request.qa.AnswerPageDTO;
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.netlink.pangu.util.DateUtil;
+import lombok.Data;
 
 /**
- * QaAnswerService
+ * QaAnswerCommentDTO
  *
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-public interface QaAnswerService {
+@Data
+public class QaAnswerCommentDTO implements Serializable {
+
+	private static final long serialVersionUID = 2447753504517921798L;
 
 	/**
-	 * 保存回答
-	 * @param qaAnswer qaAnswer
+	 * 主键ID
 	 */
-	void save(QaAnswer qaAnswer);
+	private Long id;
 
 	/**
-	 * 分页查询问题回答
-	 * @param pageDTO pageDTO
-	 * @return Page<QaAnswer>
+	 * 评论人ID
 	 */
-	Page<QaAnswer> pageByCondition(AnswerPageDTO pageDTO);
+	private String userId;
 
 	/**
-	 * 主键查找
-	 * @param answerId answerId
-	 * @return QaAnswer
+	 * 评论人姓名
 	 */
-	QaAnswer findById(Long answerId);
+	private String userName;
 
 	/**
-	 * 累计喜欢数
-	 * @param opsDTO opsDTO
-	 * @return int
+	 * 回答ID
 	 */
-	int increaseLikes(AnswerOpsDTO opsDTO);
+	private Long answerId;
 
 	/**
-	 * 累计不喜欢数
-	 * @param opsDTO opsDTO
-	 * @return int
+	 * 评论内容
 	 */
-	int increaseDislikes(AnswerOpsDTO opsDTO);
+	private String comment;
+
+	/**
+	 * 回复评论ID
+	 */
+	private Long replyToCommentId;
+
+	/**
+	 * 回复评论评论人ID
+	 */
+	private String replyToUserId;
+
+	/**
+	 * 回复评论评论人姓名
+	 */
+	private String replyToUserName;
+
+	/**
+	 * 评论时间
+	 */
+	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
+	private Date gmtCreated;
 }

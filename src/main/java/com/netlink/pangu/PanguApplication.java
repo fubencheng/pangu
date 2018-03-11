@@ -32,46 +32,46 @@ public class PanguApplication {
 		SpringApplication.run(PanguApplication.class, args);
 	}
 
-    @Value("${oss.accessId}")
-    private String accessId;
-
-    @Value("${oss.accessKey}")
-    private String accessKey;
-
-    @Value("${oss.endpoint}")
-    private String endpoint;
-
-    @Value("${oss.bucketName}")
-    private String bucketName;
-
-    /**
-     * OssUtil
-     * @return OssUtil
-     */
-    @Bean
-    public OssUtil ossUtil() {
-        OssUtil ossUtil = new OssUtil();
-        ossUtil.setAccessId(accessId);
-        ossUtil.setAccessKey(accessKey);
-        ossUtil.setBucketName(bucketName);
-        ossUtil.setEndpoint(endpoint);
-        ossUtil.setBucketPublicReadable();
-        return ossUtil;
-    }
-
-    /**
-     * OssClientConfiguration
-     * @return ClientConfiguration
-     */
-    @Bean
-    public ClientConfiguration printOssClientConfig() {
-        ClientConfiguration printOssClientConfig = new ClientConfiguration();
-        printOssClientConfig.setMaxConnections(100);
-        printOssClientConfig.setSocketTimeout(5000);
-        printOssClientConfig.setConnectionTimeout(5000);
-        printOssClientConfig.setMaxErrorRetry(3);
-        return printOssClientConfig;
-    }
+//    @Value("${oss.accessId}")
+//    private String accessId;
+//
+//    @Value("${oss.accessKey}")
+//    private String accessKey;
+//
+//    @Value("${oss.endpoint}")
+//    private String endpoint;
+//
+//    @Value("${oss.bucketName}")
+//    private String bucketName;
+//
+//    /**
+//     * OssUtil
+//     * @return OssUtil
+//     */
+//    @Bean
+//    public OssUtil ossUtil() {
+//        OssUtil ossUtil = new OssUtil();
+//        ossUtil.setAccessId(accessId);
+//        ossUtil.setAccessKey(accessKey);
+//        ossUtil.setBucketName(bucketName);
+//        ossUtil.setEndpoint(endpoint);
+//        ossUtil.setBucketPublicReadable();
+//        return ossUtil;
+//    }
+//
+//    /**
+//     * OssClientConfiguration
+//     * @return ClientConfiguration
+//     */
+//    @Bean
+//    public ClientConfiguration printOssClientConfig() {
+//        ClientConfiguration printOssClientConfig = new ClientConfiguration();
+//        printOssClientConfig.setMaxConnections(100);
+//        printOssClientConfig.setSocketTimeout(5000);
+//        printOssClientConfig.setConnectionTimeout(5000);
+//        printOssClientConfig.setMaxErrorRetry(3);
+//        return printOssClientConfig;
+//    }
 
     /**
      * MethodValidationPostProcessor

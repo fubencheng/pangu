@@ -35,4 +35,22 @@
     -->
     answer
   </sql>
+
+  <update id="updateLikes" parameterType="java.lang.Long">
+    UPDATE qa_answer
+    SET likes = likes + 1, gmt_modified = now()
+    WHERE id = #{answerId}
+  </update>
+
+  <update id="updateDislikes" parameterType="java.lang.Long">
+    UPDATE qa_answer
+    SET dislikes = dislikes + 1, gmt_modified = now()
+    WHERE id = #{answerId}
+  </update>
+
+  <update id="updateComments" parameterType="java.lang.Long">
+    UPDATE qa_answer
+    SET comments = comments + 1, gmt_modified = now()
+    WHERE id = #{answerId}
+  </update>
 </mapper>

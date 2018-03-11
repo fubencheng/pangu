@@ -1,0 +1,123 @@
+2018-03-09 21:39:44,373 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.netlink.pangu.PanguApplicationTests], using SpringBootContextLoader
+2018-03-09 21:39:44,384 [main] INFO  [org.springframework.test.context.support.AbstractContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not detect default resource locations for test class [com.netlink.pangu.PanguApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-03-09 21:39:44,385 [main] INFO  [org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not detect default configuration classes for test class [com.netlink.pangu.PanguApplicationTests]: PanguApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-03-09 21:39:44,612 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Found @SpringBootConfiguration com.netlink.pangu.PanguApplication for test class com.netlink.pangu.PanguApplicationTests
+2018-03-09 21:39:44,625 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-03-09 21:39:44,664 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1725dc0f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3911c2a7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4ac3c60d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4facf68f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@76508ed1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@41e36e46, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@15c43bd9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3d74bf60, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4f209819, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@15eb5ee5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2145b572, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@39529185]
+2018-03-09 21:39:44,671 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.netlink.pangu.PanguApplicationTests], using SpringBootContextLoader
+2018-03-09 21:39:44,672 [main] INFO  [org.springframework.test.context.support.AbstractContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not detect default resource locations for test class [com.netlink.pangu.PanguApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-03-09 21:39:44,672 [main] INFO  [org.springframework.test.context.support.AnnotationConfigContextLoaderUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not detect default configuration classes for test class [com.netlink.pangu.PanguApplicationTests]: PanguApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-03-09 21:39:44,683 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Found @SpringBootConfiguration com.netlink.pangu.PanguApplication for test class com.netlink.pangu.PanguApplicationTests
+2018-03-09 21:39:44,692 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-03-09 21:39:44,700 [main] INFO  [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@222545dc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5c5eefef, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@16293aa2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5158b42f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@595b007d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@72d1ad2e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2d7275fc, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@399f45b1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@38c6f217, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@478190fc, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@79e2c065, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3a93b025]
+2018-03-09 21:39:45,787 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@78452606: startup date [Fri Mar 09 21:39:45 CST 2018]; root of context hierarchy
+2018-03-09 21:39:46,493 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dc96538e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-09 21:39:47,384 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-09 21:39:48,586 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2018-03-09 21:39:48,594 [main] INFO  [com.netlink.pangu.PanguApplicationTests]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-09 21:39:48,599 [main] INFO  [org.springframework.web.context.support.GenericWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.web.context.support.GenericWebApplicationContext@64da2a7: startup date [Fri Mar 09 21:39:48 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@78452606
+2018-03-09 21:39:49,846 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=0e8954e0-79fd-3017-8948-5b006c396305
+2018-03-09 21:39:49,998 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$32df63a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-09 21:39:50,114 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dc96538e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-09 21:39:50,140 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c07c5091] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-09 21:39:52,445 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-09 21:39:53,137 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@64da2a7: startup date [Fri Mar 09 21:39:48 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@78452606
+2018-03-09 21:39:53,285 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-09 21:39:53,288 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-09 21:39:53,291 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-09 21:39:53,293 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-09 21:39:53,294 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-09 21:39:53,294 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-09 21:39:53,295 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-09 21:39:53,296 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-09 21:39:53,299 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-09 21:39:53,299 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-09 21:39:53,351 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-09 21:39:53,351 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-09 21:39:53,374 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-09 21:39:53,430 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-09 21:39:55,386 [main] INFO  [com.netlink.pangu.PanguApplicationTests]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplicationTests in 10.507 seconds (JVM running for 11.879)
+2018-03-09 21:39:55,515 [Thread-5] INFO  [org.springframework.web.context.support.GenericWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Closing org.springframework.web.context.support.GenericWebApplicationContext@64da2a7: startup date [Fri Mar 09 21:39:48 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@78452606
+2018-03-09 21:39:55,590 [Thread-5] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Shutting down ExecutorService 'threadPool'

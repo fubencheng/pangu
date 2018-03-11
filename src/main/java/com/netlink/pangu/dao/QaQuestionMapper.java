@@ -32,4 +32,11 @@ public interface QaQuestionMapper extends BaseMapper<QaQuestion> {
      */
     int updateViews(Long questionId);
 
+    /**
+     * 累加回答数
+     * @param questionId questionId
+     * @return result
+     */
+    int updateAnswers(Long questionId);
+
 }

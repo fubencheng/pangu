@@ -42,8 +42,8 @@ public class QaFileController {
 	private static final String Q_IMAGE_DIR = "qa-question-images";
 	private static final String A_IMAGE_DIR = "qa-answer-images";
 
-	@Resource
-	private OssUtil ossUtil;
+//	@Resource
+//	private OssUtil ossUtil;
 
 	/**
 	 * 返回的数据格式定义如下：{ errno 即错误代码，0 表示没有错误，如果有错误，errno != 0，
@@ -66,11 +66,11 @@ public class QaFileController {
 
 		Map<String, Object> resp = new HashMap<>(16);
 		try {
-			// 上传到OSS
-			String ossPath = ossUtil.uploadFile(file, objectKey);
-
-			resp.put("errno", 0);
-			resp.put("data", ossPath);
+//			// 上传到OSS
+//			String ossPath = ossUtil.uploadFile(file, objectKey);
+//
+//			resp.put("errno", 0);
+//			resp.put("data", ossPath);
 		} catch (Exception e) {
 			log.error("upload qa image failed, name={}, contentType={}, size={}",
 					file.getOriginalFilename(), file.getContentType(), file.getSize(), e);

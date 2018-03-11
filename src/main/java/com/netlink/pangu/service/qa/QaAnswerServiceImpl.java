@@ -13,13 +13,21 @@
 package com.netlink.pangu.service.qa;
 
 import com.github.pagehelper.Page;
+import com.netlink.pangu.consts.RespCodeEnum;
 import com.netlink.pangu.dao.QaAnswerMapper;
+import com.netlink.pangu.dao.QaQuestionMapper;
 import com.netlink.pangu.domain.QaAnswer;
+import com.netlink.pangu.dto.request.qa.AnswerOpsDTO;
 import com.netlink.pangu.dto.request.qa.AnswerPageDTO;
+import com.netlink.pangu.exception.BizException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Condition;
 
 /**
@@ -28,35 +36,43 @@ import tk.mybatis.mapper.entity.Condition;
  * @author fubencheng
  * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
+@Slf4j
 @Service("answerService")
 public class QaAnswerServiceImpl implements QaAnswerService {
 
 	private QaAnswerMapper answerMapper;
+    private QaQuestionMapper questionMapper;
 
 	@Autowired
-	public QaAnswerServiceImpl(QaAnswerMapper answerMapper){
+	public QaAnswerServiceImpl(QaAnswerMapper answerMapper,
+                               QaQuestionMapper questionMapper){
 	    this.answerMapper = answerMapper;
+	    this.questionMapper = questionMapper;
     }
 
-//	@Autowired
-//	private QaQuestionDAO questionDAO;
+	@Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public void save(QaAnswer answer) {
+        try {
+            answerMapper.insertSelective(answer);
+            questionMapper.updateAnswers(answer.getQuestionId());
+        } catch (Exception e) {
+            log.error("save answer failed, questionId={}, answer={}", answer.getQuestionId(), answer.getAnswer(), e);
+            throw new BizException(RespCodeEnum.FAIL.getCode(), "failed to save answer");
+        }
+    }
 
-//	@Override
-//	public void saveAnswer(QaAnswerDO answer) {
-//		answer.setGmtCreated(new Date());
-//		answerDAO.insertSelective(answer);
-//		questionDAO.updateAnswers(answer.getQuestionId());
-//	}
-//
-//	@Override
-//	public void signAnswer(Long id, Integer eventType) {
-//		if (EventTypeEnum.THUMB_UP.getEventCode() == eventType) {
-//			answerDAO.updateLikes(id);
-//		}
-//		if (EventTypeEnum.THUMB_DOWN.getEventCode() == eventType) {
-//			answerDAO.updateDislikes(id);
-//		}
-//	}
+	@Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public int increaseLikes(AnswerOpsDTO opsDTO) {
+		return answerMapper.updateLikes(opsDTO.getAnswerId());
+	}
+
+	@Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+	public int increaseDislikes(AnswerOpsDTO opsDTO){
+        return answerMapper.updateDislikes(opsDTO.getAnswerId());
+    }
 
 	@Override
 	public Page<QaAnswer> pageByCondition(AnswerPageDTO pageDTO) {
@@ -93,4 +109,8 @@ public class QaAnswerServiceImpl implements QaAnswerService {
         return orderBuilder.toString();
     }
 
+    @Override
+    public QaAnswer findById(Long answerId) {
+        return answerMapper.selectByPrimaryKey(answerId);
+    }
 }

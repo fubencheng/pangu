@@ -83,8 +83,12 @@ public class QaQuestionController extends BaseController {
      */
 	@PostMapping("/save")
 	public BaseResult save(@Valid @RequestBody QuestionAddDTO questionAddDTO) {
+		log.info("save question, question={}", questionAddDTO);
 
 		QaCategory category = categoryService.findById(questionAddDTO.getCategoryId());
+		if (category == null){
+			return new BaseResult(RespCodeEnum.ILLEGAL_ARG);
+		}
 		QaQuestion questionDO = new QaQuestion();
 		questionDO.setCategoryId(category.getId());
 		questionDO.setCategoryName(category.getCategoryName());
@@ -183,72 +187,5 @@ public class QaQuestionController extends BaseController {
 		BeanUtils.copyProperties(question, questionDTO);
 		return new BaseResult<>(questionDTO);
 	}
-
-// /**
-//	 * 顶踩浏览次数计数
-//	 *
-//	 * @param request
-//	 * @param opsDTO
-//	 * @return
-//	 */
-//	@PostMapping("/sign")
-//	public BaseResponse signQuestion(HttpServletRequest request, @Valid @RequestBody QuestionOpsDTO opsDTO) {
-//		if (EventTypeEnum.THUMB_UP.getEventCode() == opsDTO.getEventType() || EventTypeEnum.THUMB_DOWN.getEventCode() == opsDTO.getEventType()) {
-//			checkThumbUpOrThumbDown(request, opsDTO);
-//		}else{
-//			questionService.signQuestion(opsDTO.getQuestionId(), 0);
-//		}
-//		return new BaseResponse();
-//	}
-//
-//	/**
-//	 * 顶踩浏览次数计数
-//	 * @param request
-//	 * @param opsDTO
-//	 */
-//	private void checkThumbUpOrThumbDown(HttpServletRequest request, QuestionOpsDTO opsDTO){
-//		SessionUser sessionUser= userService.getUser(request);
-//		if (sessionUser == null){
-//			throw new SystemException(RespCodeEnum.SYS_ERROR.getCode(), "login user cannot be null");
-//		}
-//		String userNo = sessionUser.getStaffNo();
-//		String userName = sessionUser.getName();
-//		QaQuestionEvaluateDO evaluate = questionEvaluateService.findByUserIdAndQuestionIdAndEvaluate(userNo, opsDTO.getQuestionId(), opsDTO.getEventType());
-//		if (evaluate == null) {
-//			evaluate = new QaQuestionEvaluateDO();
-//			evaluate.setUserId(userNo);
-//			evaluate.setUserName(userName);
-//			evaluate.setQuestionId(opsDTO.getQuestionId());
-//			evaluate.setEvaluate(opsDTO.getEventType());
-//			questionEvaluateService.save(evaluate);
-//			questionService.signQuestion(opsDTO.getQuestionId(), opsDTO.getEventType());
-//		}else{
-//			//questionService.signQuestion(opsDTO.getQuestionId(), 0);
-//		}
-//	}
-//
-//	@GetMapping("/list")
-//	public BasePageResponse getQuestionList(@NotNull QuestionPageDTO pageDTO) {
-//		Page<QaQuestionDO> questionList = questionService.pageQuestionByCondition(pageDTO);
-//		QuestionPageResponse pageResponse = new QuestionPageResponse();
-//		pageResponse.setPageNum(questionList.getPageNum());
-//		pageResponse.setPageSize(questionList.getPageSize());
-//		pageResponse.setTotal(questionList.getTotal());
-//		List<QuestionDTO> questionDTOList = new ArrayList<>();
-//		for (QaQuestionDO question : questionList) {
-//			QuestionDTO questionDTO = mapperFacade.map(question, QuestionDTO.class);
-//			questionDTOList.add(questionDTO);
-//		}
-//		pageResponse.setQuestionDTOList(questionDTOList);
-//		return pageResponse;
-//	}
-//
-//	@GetMapping("/{id}")
-//	public BaseResponse getQuestionDetail(@NotNull @PathVariable("id") Long id) {
-//		QaQuestionDO question = questionService.findById(id);
-//		QuestionDTO questionDTO = mapperFacade.map(question, QuestionDTO.class);
-//
-//		return new QuestionResponse(questionDTO);
-//	}
 
 }

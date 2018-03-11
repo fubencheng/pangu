@@ -12,21 +12,35 @@
  */
 package com.netlink.pangu.service.qa;
 
-import java.util.Map;
-
 import com.github.pagehelper.Page;
 import com.netlink.pangu.domain.QaAnswerComment;
+import com.netlink.pangu.dto.request.qa.AnswerCommentPageDTO;
 
 /**
- * 评论服务
+ * QaAnswerCommentService
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-public interface CommentService {
+public interface QaAnswerCommentService {
 
-	void save(QaAnswerComment comment);
+	/**
+	 * 保存回答评论
+	 * @param answerComment answerComment
+	 */
+	void save(QaAnswerComment answerComment);
 
-	Page<QaAnswerComment> pageCommentByCondition(Map<String, Object> condition);
+	/**
+	 * 分页查询回答评论
+	 * @param pageDTO pageDTO
+	 * @return Page<QaAnswerComment>
+	 */
+	Page<QaAnswerComment> pageByCondition(AnswerCommentPageDTO pageDTO);
 
+	/**
+	 * 主键查询
+	 * @param answerCommentId answerCommentId
+	 * @return QaAnswerComment
+	 */
+	QaAnswerComment findById(Long answerCommentId);
 }

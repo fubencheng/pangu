@@ -56,4 +56,10 @@
     SET views = views + 1, gmt_modified = now()
     WHERE id = #{questionId}
   </update>
+
+  <update id="updateAnswers" parameterType="java.lang.Long">
+    UPDATE qa_question
+    SET answers = answers + 1, gmt_modified = now()
+    WHERE id = #{questionId}
+  </update>
 </mapper>

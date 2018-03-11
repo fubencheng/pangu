@@ -43,7 +43,17 @@ public enum RespCodeEnum {
     /**
      * 问答模块，已经点过踩
      */
-    ALREADY_THUMBSDOWN("1001", "已经点过踩");
+    ALREADY_THUMBSDOWN("1001", "已经点过踩"),
+
+    /**
+     * 已经点过喜欢
+     */
+    ALREADY_LIKE("1002", "已经点过喜欢"),
+
+    /**
+     * 已经点过不喜欢
+     */
+    ALREADY_DISLIKE("1003", "已经点过不喜欢");
 
 	private String code;
 	private String message;

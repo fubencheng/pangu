@@ -1,0 +1,1109 @@
+2018-03-10 12:25:16,681 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8: startup date [Sat Mar 10 12:25:16 CST 2018]; root of context hierarchy
+2018-03-10 12:25:17,102 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c878053b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:25:18,551 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 12:25:18,725 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 12:25:18,727 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 12:25:18,756 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a567e72: startup date [Sat Mar 10 12:25:18 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8
+2018-03-10 12:25:19,449 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=1ef54632-3310-34f2-81d1-33540c629920
+2018-03-10 12:25:19,505 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$1ec1154f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:25:19,580 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c878053b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:25:19,592 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ac5e023e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:25:20,001 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 12:25:20,020 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 12:25:20,022 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 12:25:20,142 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 12:25:20,142 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1386 ms
+2018-03-10 12:25:20,324 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 12:25:20,329 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 12:25:20,329 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 12:25:20,329 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 12:25:20,329 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 12:25:20,939 [main] WARN  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'qaFileController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is java.lang.NullPointerException
+2018-03-10 12:25:20,940 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Stopping service [Tomcat]
+2018-03-10 12:25:20,966 [main] INFO  [org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-10 12:25:20,974 [main] ERROR [org.springframework.boot.SpringApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'qaFileController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.netlink.pangu.PanguApplication.main(PanguApplication.java:32)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:522)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:627)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:169)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 31 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.netlink.pangu.util.OssUtil.setBucketPublicReadable(OssUtil.java:111)
+	at com.netlink.pangu.PanguApplication.ossUtil(PanguApplication.java:58)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$1ec1154f.CGLIB$ossUtil$0(<generated>)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$1ec1154f$$FastClassBySpringCGLIB$$da801be5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$1ec1154f.ossUtil(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 32 common frames omitted
+2018-03-10 12:27:45,132 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8: startup date [Sat Mar 10 12:27:45 CST 2018]; root of context hierarchy
+2018-03-10 12:27:45,555 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$38df7fd4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:27:47,020 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 12:27:47,203 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 12:27:47,205 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 12:27:47,232 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4d4960c8: startup date [Sat Mar 10 12:27:47 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8
+2018-03-10 12:27:48,014 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=1ef54632-3310-34f2-81d1-33540c629920
+2018-03-10 12:27:48,056 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$8f288fe8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:27:48,132 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$38df7fd4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:27:48,141 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1cc57cd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:27:48,548 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 12:27:48,564 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 12:27:48,565 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 12:27:48,719 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 12:27:48,719 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1487 ms
+2018-03-10 12:27:48,924 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 12:27:48,931 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 12:27:48,932 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 12:27:48,932 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 12:27:48,932 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 12:31:36,818 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8: startup date [Sat Mar 10 12:31:36 CST 2018]; root of context hierarchy
+2018-03-10 12:31:37,266 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dceb8ca7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:31:38,811 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 12:31:38,979 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 12:31:38,981 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 12:31:39,033 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b78fdb1: startup date [Sat Mar 10 12:31:39 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@19b93fa8
+2018-03-10 12:31:39,915 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=1ef54632-3310-34f2-81d1-33540c629920
+2018-03-10 12:31:40,045 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$33349cbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:31:40,289 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dceb8ca7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:31:40,331 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c0d189aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:31:41,072 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 12:31:41,103 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 12:31:41,106 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 12:31:41,278 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 12:31:41,279 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 2246 ms
+2018-03-10 12:31:41,756 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 12:31:41,778 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 12:31:41,785 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 12:31:41,787 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 12:31:41,787 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 12:35:08,457 [main] WARN  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'qaFileController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is com.aliyun.openservices.ClientException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+2018-03-10 12:35:08,459 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Stopping service [Tomcat]
+2018-03-10 12:35:08,490 [main] INFO  [org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-10 12:35:08,499 [main] ERROR [org.springframework.boot.SpringApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'qaFileController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is com.aliyun.openservices.ClientException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.netlink.pangu.PanguApplication.main(PanguApplication.java:32)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ossUtil' defined in com.netlink.pangu.PanguApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is com.aliyun.openservices.ClientException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:522)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:627)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:169)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.netlink.pangu.util.OssUtil]: Factory method 'ossUtil' threw exception; nested exception is com.aliyun.openservices.ClientException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 31 common frames omitted
+Caused by: com.aliyun.openservices.ClientException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+	at com.aliyun.common.utils.ExceptionFactory.createNetworkException(ExceptionFactory.java:19)
+	at com.aliyun.common.comm.DefaultServiceClient.sendRequestCore(DefaultServiceClient.java:59)
+	at com.aliyun.common.comm.ServiceClient.sendRequestImpl(ServiceClient.java:176)
+	at com.aliyun.common.comm.ServiceClient.sendRequest(ServiceClient.java:136)
+	at com.aliyun.openservices.oss.internal.OSSOperation.send(OSSOperation.java:60)
+	at com.aliyun.openservices.oss.internal.OSSOperation.send(OSSOperation.java:54)
+	at com.aliyun.openservices.oss.internal.OSSBucketOperation.setBucketAcl(OSSBucketOperation.java:163)
+	at com.aliyun.openservices.oss.OSSClient.setBucketAcl(OSSClient.java:239)
+	at com.netlink.pangu.util.OssUtil.setBucketPublicReadable(OssUtil.java:111)
+	at com.netlink.pangu.PanguApplication.ossUtil(PanguApplication.java:58)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$33349cbb.CGLIB$ossUtil$3(<generated>)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$33349cbb$$FastClassBySpringCGLIB$$390e0d8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$33349cbb.ossUtil(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 32 common frames omitted
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to cmis.oss-cn-hzjbp-b-internal.aliyuncs.com:80 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.aliyun.common.comm.DefaultServiceClient.sendRequestCore(DefaultServiceClient.java:57)
+	... 50 common frames omitted
+2018-03-10 12:38:07,736 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb: startup date [Sat Mar 10 12:38:07 CST 2018]; root of context hierarchy
+2018-03-10 12:38:08,378 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc388fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:38:09,892 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 12:38:10,222 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 12:38:10,224 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 12:38:10,276 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4aac85fa: startup date [Sat Mar 10 12:38:10 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb
+2018-03-10 12:38:11,709 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=eea118e1-d4b9-3304-a94c-259e21d97532
+2018-03-10 12:38:11,783 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$630c990e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:38:11,892 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc388fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:38:11,909 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f0a985fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:38:12,556 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 12:38:12,587 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 12:38:12,589 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 12:38:12,756 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 12:38:12,757 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 2481 ms
+2018-03-10 12:38:13,059 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 12:38:13,066 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 12:38:13,067 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 12:38:13,067 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 12:38:13,067 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 12:38:13,912 [main] WARN  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'qaFileController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.netlink.pangu.util.OssUtil' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2018-03-10 12:38:13,915 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Stopping service [Tomcat]
+2018-03-10 12:38:13,950 [main] INFO  [org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-10 12:38:14,161 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.netlink.pangu.util.OssUtil' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.netlink.pangu.util.OssUtil' in your configuration.
+
+2018-03-10 12:41:49,882 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@740d2e78: startup date [Sat Mar 10 12:41:49 CST 2018]; root of context hierarchy
+2018-03-10 12:41:50,336 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c1fbb0cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:41:51,767 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 12:41:52,040 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 12:41:52,045 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 12:41:52,087 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1917d90f: startup date [Sat Mar 10 12:41:52 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@740d2e78
+2018-03-10 12:41:52,810 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=eea118e1-d4b9-3304-a94c-259e21d97532
+2018-03-10 12:41:52,851 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$1844c0e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:41:52,920 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c1fbb0cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:41:52,931 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a5e1add2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 12:41:53,320 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 12:41:53,333 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 12:41:53,334 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 12:41:53,442 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 12:41:53,442 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1355 ms
+2018-03-10 12:41:53,601 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 12:41:53,610 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 12:41:53,612 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 12:41:53,613 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 12:41:53,613 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 12:41:54,321 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-10 12:41:54,663 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1917d90f: startup date [Sat Mar 10 12:41:52 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@740d2e78
+2018-03-10 12:41:54,744 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-10 12:41:54,746 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-10 12:41:54,748 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-10 12:41:54,749 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-10 12:41:54,750 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-10 12:41:54,750 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-10 12:41:54,751 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-10 12:41:54,752 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-10 12:41:54,754 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-10 12:41:54,755 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-10 12:41:54,804 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 12:41:54,805 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 12:41:54,830 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-10 12:41:54,864 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 12:41:56,394 [main] INFO  [org.springframework.cloud.commons.util.InetUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Cannot determine local hostname
+2018-03-10 12:41:57,071 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Registering beans for JMX exposure on startup
+2018-03-10 12:41:57,074 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-10 12:41:57,083 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-03-10 12:41:57,084 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-03-10 12:41:57,085 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-03-10 12:41:57,087 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-03-10 12:41:57,104 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-03-10 12:41:57,115 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=1917d90f,type=ConfigurationPropertiesRebinder]
+2018-03-10 12:41:57,307 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-03-10 12:41:57,352 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ProtocolHandler ["http-nio-8081"]
+2018-03-10 12:41:57,374 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting ProtocolHandler ["http-nio-8081"]
+2018-03-10 12:41:57,392 [main] INFO  [org.apache.tomcat.util.net.NioSelectorPool]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using a shared selector for servlet write/read
+2018-03-10 12:41:57,418 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat started on port(s): 8081 (http)
+2018-03-10 12:41:57,423 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplication in 9.069 seconds (JVM running for 11.434)
+2018-03-10 12:43:29,425 [Thread-25] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1917d90f: startup date [Sat Mar 10 12:41:52 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@740d2e78
+2018-03-10 12:43:29,428 [Thread-25] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans on shutdown
+2018-03-10 12:43:29,429 [Thread-25] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans
+2018-03-10 12:43:29,430 [Thread-25] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Shutting down ExecutorService 'threadPool'
+2018-03-10 13:52:49,713 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995: startup date [Sat Mar 10 13:52:49 CST 2018]; root of context hierarchy
+2018-03-10 13:52:50,076 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cab06b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 13:52:51,450 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 13:52:51,594 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 13:52:51,596 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 13:52:51,618 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c96a4ea: startup date [Sat Mar 10 13:52:51 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995
+2018-03-10 13:52:52,282 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=eea118e1-d4b9-3304-a94c-259e21d97532
+2018-03-10 13:52:52,321 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$62f416cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 13:52:52,386 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cab06b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 13:52:52,396 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f09103ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 13:52:52,778 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 13:52:52,789 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 13:52:52,790 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 13:52:52,895 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 13:52:52,895 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1277 ms
+2018-03-10 13:52:53,097 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 13:52:53,102 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 13:52:53,103 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 13:52:53,103 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 13:52:53,103 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 13:52:53,667 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-10 13:52:53,963 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c96a4ea: startup date [Sat Mar 10 13:52:51 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995
+2018-03-10 13:52:54,058 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-10 13:52:54,060 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-10 13:52:54,063 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-10 13:52:54,065 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-10 13:52:54,065 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-10 13:52:54,066 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-10 13:52:54,067 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-10 13:52:54,068 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-10 13:52:54,072 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-10 13:52:54,072 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-10 13:52:54,122 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 13:52:54,122 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 13:52:54,147 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-10 13:52:54,245 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 13:52:55,741 [main] INFO  [org.springframework.cloud.commons.util.InetUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Cannot determine local hostname
+2018-03-10 13:52:56,350 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Registering beans for JMX exposure on startup
+2018-03-10 13:52:56,352 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-10 13:52:56,360 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-03-10 13:52:56,360 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-03-10 13:52:56,361 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-03-10 13:52:56,365 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-03-10 13:52:56,618 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-03-10 13:52:56,637 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=c96a4ea,type=ConfigurationPropertiesRebinder]
+2018-03-10 13:52:56,651 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-03-10 13:52:56,690 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ProtocolHandler ["http-nio-8081"]
+2018-03-10 13:52:56,703 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting ProtocolHandler ["http-nio-8081"]
+2018-03-10 13:52:56,722 [main] INFO  [org.apache.tomcat.util.net.NioSelectorPool]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using a shared selector for servlet write/read
+2018-03-10 13:52:56,748 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat started on port(s): 8081 (http)
+2018-03-10 13:52:56,753 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplication in 8.634 seconds (JVM running for 9.648)
+2018-03-10 14:03:11,548 [http-nio-8081-exec-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-10 14:03:11,551 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-10 14:03:11,617 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization completed in 66 ms
+2018-03-10 14:06:46,704 [Thread-23] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@c96a4ea: startup date [Sat Mar 10 13:52:51 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995
+2018-03-10 14:06:46,707 [Thread-23] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans on shutdown
+2018-03-10 14:06:46,707 [Thread-23] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans
+2018-03-10 14:06:46,710 [Thread-23] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Shutting down ExecutorService 'threadPool'
+2018-03-10 14:07:23,524 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb: startup date [Sat Mar 10 14:07:23 CST 2018]; root of context hierarchy
+2018-03-10 14:07:24,015 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9fb0a916] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 14:07:25,457 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 14:07:25,629 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 14:07:25,631 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 14:07:25,668 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2fe88a09: startup date [Sat Mar 10 14:07:25 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb
+2018-03-10 14:07:26,404 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=eea118e1-d4b9-3304-a94c-259e21d97532
+2018-03-10 14:07:26,447 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$f5f9b92a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 14:07:26,511 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9fb0a916] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 14:07:26,519 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8396a619] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 14:07:26,904 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 14:07:26,920 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 14:07:26,922 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 14:07:27,084 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 14:07:27,085 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1416 ms
+2018-03-10 14:07:27,295 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 14:07:27,301 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 14:07:27,302 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 14:07:27,302 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 14:07:27,302 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 14:07:28,001 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-10 14:07:28,375 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2fe88a09: startup date [Sat Mar 10 14:07:25 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb
+2018-03-10 14:07:28,472 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-10 14:07:28,474 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-10 14:07:28,476 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-10 14:07:28,479 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-10 14:07:28,480 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-10 14:07:28,480 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-10 14:07:28,483 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-10 14:07:28,485 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-10 14:07:28,490 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-10 14:07:28,491 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-10 14:07:28,556 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 14:07:28,556 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 14:07:28,682 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-10 14:07:28,742 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 14:07:30,514 [main] INFO  [org.springframework.cloud.commons.util.InetUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Cannot determine local hostname
+2018-03-10 14:07:31,156 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Registering beans for JMX exposure on startup
+2018-03-10 14:07:31,158 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-10 14:07:31,168 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-03-10 14:07:31,169 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-03-10 14:07:31,170 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-03-10 14:07:31,172 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-03-10 14:07:31,189 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-03-10 14:07:31,201 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=2fe88a09,type=ConfigurationPropertiesRebinder]
+2018-03-10 14:07:31,422 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-03-10 14:07:31,479 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ProtocolHandler ["http-nio-8081"]
+2018-03-10 14:07:31,498 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting ProtocolHandler ["http-nio-8081"]
+2018-03-10 14:07:31,523 [main] INFO  [org.apache.tomcat.util.net.NioSelectorPool]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using a shared selector for servlet write/read
+2018-03-10 14:07:31,552 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat started on port(s): 8081 (http)
+2018-03-10 14:07:31,557 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplication in 9.57 seconds (JVM running for 10.896)
+2018-03-10 14:07:43,409 [http-nio-8081-exec-2] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-10 14:07:43,411 [http-nio-8081-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-10 14:07:43,479 [http-nio-8081-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization completed in 68 ms
+2018-03-10 18:13:11,450 [Thread-25] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2fe88a09: startup date [Sat Mar 10 14:07:25 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@29a0cdb
+2018-03-10 18:13:11,470 [Thread-25] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans on shutdown
+2018-03-10 18:13:11,471 [Thread-25] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Unregistering JMX-exposed beans
+2018-03-10 18:13:11,474 [Thread-25] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Shutting down ExecutorService 'threadPool'
+2018-03-10 18:13:53,026 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995: startup date [Sat Mar 10 18:13:53 CST 2018]; root of context hierarchy
+2018-03-10 18:13:53,472 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d3e6014] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 18:13:54,908 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-10 18:13:55,063 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/pangu/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2018-03-10 18:13:55,064 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-10 18:13:55,083 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c42b421: startup date [Sat Mar 10 18:13:55 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995
+2018-03-10 18:13:55,893 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=eea118e1-d4b9-3304-a94c-259e21d97532
+2018-03-10 18:13:55,957 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$e3877028] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 18:13:56,103 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8d3e6014] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 18:13:56,130 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71245d17] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-10 18:13:56,534 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-10 18:13:56,547 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-10 18:13:56,549 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-10 18:13:56,670 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-10 18:13:56,670 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1587 ms
+2018-03-10 18:13:56,871 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-10 18:13:56,875 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-10 18:13:56,876 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-10 18:13:56,876 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-10 18:13:56,877 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-10 18:13:57,431 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-10 18:13:57,745 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2c42b421: startup date [Sat Mar 10 18:13:55 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@71329995
+2018-03-10 18:13:57,818 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaAnswerController.save(com.netlink.pangu.dto.request.qa.AnswerAddDTO)
+2018-03-10 18:13:57,819 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-10 18:13:57,820 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-10 18:13:57,822 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-10 18:13:57,824 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-10 18:13:57,825 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-10 18:13:57,826 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-10 18:13:57,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-10 18:13:57,827 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-10 18:13:57,830 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-10 18:13:57,830 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-10 18:13:57,907 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 18:13:57,907 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 18:13:57,935 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-10 18:13:57,993 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-10 18:13:59,628 [main] INFO  [org.springframework.cloud.commons.util.InetUtils]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Cannot determine local hostname
+2018-03-10 18:14:00,300 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Registering beans for JMX exposure on startup
+2018-03-10 18:14:00,306 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-10 18:14:00,328 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-03-10 18:14:00,330 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-03-10 18:14:00,333 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-03-10 18:14:00,342 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-03-10 18:14:00,599 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-03-10 18:14:00,615 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=2c42b421,type=ConfigurationPropertiesRebinder]
+2018-03-10 18:14:00,627 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-03-10 18:14:00,682 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ProtocolHandler ["http-nio-8081"]
+2018-03-10 18:14:00,695 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting ProtocolHandler ["http-nio-8081"]
+2018-03-10 18:14:00,711 [main] INFO  [org.apache.tomcat.util.net.NioSelectorPool]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using a shared selector for servlet write/read
+2018-03-10 18:14:00,732 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat started on port(s): 8081 (http)
+2018-03-10 18:14:00,737 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplication in 9.245 seconds (JVM running for 10.295)
+2018-03-10 18:15:14,533 [http-nio-8081-exec-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-10 18:15:14,533 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-10 18:15:14,568 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization completed in 34 ms
+2018-03-10 18:15:45,405 [http-nio-8081-exec-3] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer, answer=AnswerAddDTO(questionId=1, answer=<p>java 是 一种 编程语言</p>)
+2018-03-10 18:29:45,681 [http-nio-8081-exec-10] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer, answer=AnswerAddDTO(questionId=1, answer=<h1>java &nbsp;是一种高级编程语言</h1>)

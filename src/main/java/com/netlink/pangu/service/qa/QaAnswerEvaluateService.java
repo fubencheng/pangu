@@ -10,44 +10,30 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.netlink.pangu.dto.response.qa;
+package com.netlink.pangu.service.qa;
 
-import java.io.Serializable;
-import java.util.Date;
+import com.netlink.pangu.domain.QaAnswerEvaluate;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.netlink.pangu.util.DateUtil;
-import lombok.Data;
+import java.util.List;
 
 /**
- * 评论DTO
+ * QaAnswerEvaluateService
  *
  * @author fubencheng
- * @version v0.1 2017-11-30 20:45 fubencheng Exp $
+ * @version 0.0.1 2017-11-30 20:45 fubencheng
  */
-@Data
-public class CommentDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
+public interface QaAnswerEvaluateService {
 
-	private Long id;
+	/**
+	 * 保存回答评价
+	 * @param answerEvaluate answerEvaluate
+	 */
+	void save(QaAnswerEvaluate answerEvaluate);
 
-	private String userId;
-
-	private String userName;
-
-	private Long answerId;
-
-	private String comment;
-
-	private Long replyToCommentId;
-
-	private String replyToUserId;
-
-	private String replyToUserName;
-
-	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
-	private Date createTime;
-
-	@JsonFormat(timezone = "GMT+8", pattern = DateUtil.DEFAULT_DATE_TIME_FORMAT)
-	private Date gmtCreated;
+	/**
+	 * 查询回答评价
+	 * @param answerEvaluate answerEvaluate
+	 * @return List<QaAnswerEvaluate>
+	 */
+	List<QaAnswerEvaluate> findByCondition(QaAnswerEvaluate answerEvaluate);
 }
