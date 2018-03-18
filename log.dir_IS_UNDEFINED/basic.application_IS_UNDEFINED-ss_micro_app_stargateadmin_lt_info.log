@@ -241,3 +241,284 @@
 2018-03-11 23:05:01,127 [Thread-22] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
 				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
 				- Shutting down ExecutorService 'threadPool'
+2018-03-18 17:51:03,205 [main] INFO  [org.springframework.context.annotation.AnnotationConfigApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4ff4357f: startup date [Sun Mar 18 17:51:03 CST 2018]; root of context hierarchy
+2018-03-18 17:51:03,638 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fec1e9e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 17:51:04,430 [main] INFO  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Fetching config from server at: http://localhost:8888
+2018-03-18 17:51:04,573 [main] WARN  [org.springframework.cloud.config.client.ConfigServicePropertySourceLocator]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Could not locate PropertySource: label not found
+2018-03-18 17:51:04,574 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- The following profiles are active: dev
+2018-03-18 17:51:04,600 [main] INFO  [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@bdecc21: startup date [Sun Mar 18 17:51:04 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4ff4357f
+2018-03-18 17:51:05,424 [main] INFO  [org.springframework.cloud.context.scope.GenericScope]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- BeanFactory id=6459648d-e7d1-37c4-ae96-8f2a81e85c8a
+2018-03-18 17:51:05,467 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'panguApplication' of type [com.netlink.pangu.PanguApplication$$EnhancerBySpringCGLIB$$550af9f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 17:51:05,550 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fec1e9e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 17:51:05,563 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e2a7e6e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 17:51:05,974 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat initialized with port(s): 8081 (http)
+2018-03-18 17:51:05,990 [main] INFO  [org.apache.catalina.core.StandardService]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting service [Tomcat]
+2018-03-18 17:51:05,991 [main] INFO  [org.apache.catalina.core.StandardEngine]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-03-18 17:51:06,258 [localhost-startStop-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring embedded WebApplicationContext
+2018-03-18 17:51:06,258 [localhost-startStop-1] INFO  [org.springframework.web.context.ContextLoader]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Root WebApplicationContext: initialization completed in 1658 ms
+2018-03-18 17:51:06,474 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.ServletRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-18 17:51:06,480 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-18 17:51:06,481 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-18 17:51:06,481 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-18 17:51:06,481 [localhost-startStop-1] INFO  [org.springframework.boot.web.servlet.FilterRegistrationBean]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-18 17:51:07,176 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ExecutorService  'threadPool'
+2018-03-18 17:51:07,551 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@bdecc21: startup date [Sun Mar 18 17:51:04 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4ff4357f
+2018-03-18 17:51:07,640 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaAnswerController.save(com.netlink.pangu.dto.request.qa.AnswerAddDTO)
+2018-03-18 17:51:07,642 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/comment/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaAnswerController.saveAnswerComment(com.netlink.pangu.dto.request.qa.AnswerCommentAddDTO)
+2018-03-18 17:51:07,643 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/comment/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult com.netlink.pangu.web.QaAnswerController.getAnswerCommentList(com.netlink.pangu.dto.request.qa.AnswerCommentPageDTO)
+2018-03-18 17:51:07,644 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaAnswerController.signAnswer(com.netlink.pangu.dto.request.qa.AnswerOpsDTO)
+2018-03-18 17:51:07,645 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/answer/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaAnswerDTO> com.netlink.pangu.web.QaAnswerController.getAnswerList(com.netlink.pangu.dto.request.qa.AnswerPageDTO)
+2018-03-18 17:51:07,647 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/category/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<java.util.List<com.netlink.pangu.dto.response.qa.QaCategoryDTO>> com.netlink.pangu.web.QaCategoryController.getQaCategoryList()
+2018-03-18 17:51:07,648 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/upload/question/image],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.netlink.pangu.web.QaFileController.uploadImage(org.springframework.web.multipart.MultipartFile)
+2018-03-18 17:51:07,650 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/save],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.save(com.netlink.pangu.dto.request.qa.QuestionAddDTO)
+2018-03-18 17:51:07,651 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/detail],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionDetail(java.lang.Long)
+2018-03-18 17:51:07,652 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/sign],methods=[POST]}" onto public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO)
+2018-03-18 17:51:07,652 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/qa/question/list],methods=[GET]}" onto public com.netlink.pangu.dto.response.PageResult<com.netlink.pangu.dto.response.qa.QaQuestionDTO> com.netlink.pangu.web.QaQuestionController.getQuestionList(com.netlink.pangu.dto.request.qa.QuestionPageDTO)
+2018-03-18 17:51:07,653 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/user/info],methods=[GET]}" onto public com.netlink.pangu.dto.response.BaseResult<com.netlink.pangu.dto.response.user.UserInfoDTO> com.netlink.pangu.web.UserController.getCurrentUserInfo()
+2018-03-18 17:51:07,657 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-18 17:51:07,658 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-18 17:51:07,702 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-18 17:51:07,702 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-18 17:51:07,726 [main] INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Detected @ExceptionHandler methods in exceptionInterceptor
+2018-03-18 17:51:07,760 [main] INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-18 17:51:09,334 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Registering beans for JMX exposure on startup
+2018-03-18 17:51:09,338 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-18 17:51:09,346 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-03-18 17:51:09,347 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-03-18 17:51:09,348 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-03-18 17:51:09,352 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-03-18 17:51:09,367 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-03-18 17:51:09,381 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=bdecc21,type=ConfigurationPropertiesRebinder]
+2018-03-18 17:51:09,387 [main] INFO  [org.springframework.jmx.export.annotation.AnnotationMBeanExporter]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-03-18 17:51:09,418 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing ProtocolHandler ["http-nio-8081"]
+2018-03-18 17:51:09,433 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Starting ProtocolHandler ["http-nio-8081"]
+2018-03-18 17:51:09,453 [main] INFO  [org.apache.tomcat.util.net.NioSelectorPool]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Using a shared selector for servlet write/read
+2018-03-18 17:51:09,486 [main] INFO  [org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Tomcat started on port(s): 8081 (http)
+2018-03-18 17:51:09,490 [main] INFO  [com.netlink.pangu.PanguApplication]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Started PanguApplication in 7.553 seconds (JVM running for 9.838)
+2018-03-18 18:02:22,330 [http-nio-8081-exec-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-18 18:02:22,330 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-18 18:02:22,367 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- FrameworkServlet 'dispatcherServlet': initialization completed in 37 ms
+2018-03-18 18:04:40,306 [http-nio-8081-exec-9] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer, answer=AnswerAddDTO(questionId=1, answer=<p>dubbo</p>)
+2018-03-18 18:05:19,734 [http-nio-8081-exec-3] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=1, comment=有用, replyToCommentId=null)
+2018-03-18 18:05:28,841 [http-nio-8081-exec-8] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- sign answer, ops=AnswerOpsDTO(answerId=1, ops=1)
+2018-03-18 18:05:51,947 [http-nio-8081-exec-10] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- sign answer, ops=AnswerOpsDTO(answerId=1, ops=-1)
+2018-03-18 18:06:13,147 [http-nio-8081-exec-3] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=1, comment=可以啊, replyToCommentId=null)
+2018-03-18 18:17:04,866 [http-nio-8081-exec-7] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=1, comment=你就知道这么说, replyToCommentId=2)
+2018-03-18 18:22:22,972 [http-nio-8081-exec-3] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer, answer=AnswerAddDTO(questionId=1, answer=<h1>我知道</h1>)
+2018-03-18 18:22:28,943 [http-nio-8081-exec-6] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- sign answer, ops=AnswerOpsDTO(answerId=2, ops=1)
+2018-03-18 18:22:56,138 [http-nio-8081-exec-9] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=2, comment=知道啥？, replyToCommentId=null)
+2018-03-18 18:27:16,462 [http-nio-8081-exec-3] INFO  [com.netlink.pangu.web.QaQuestionController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save question, question=QuestionAddDTO(categoryId=25, title=你在干什么, question=<p>就想知道你在干啥</p>)
+2018-03-18 18:30:16,971 [http-nio-8081-exec-9] ERROR [com.netlink.pangu.exception.ExceptionInterceptor]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- request uri[/qa/question/sign], exception class[org.springframework.web.bind.MethodArgumentNotValidException]
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument at index 0 in method: public com.netlink.pangu.dto.response.BaseResult com.netlink.pangu.web.QaQuestionController.signQuestion(com.netlink.pangu.dto.request.qa.QuestionOpsDTO), with 1 error(s): [Field error in object 'questionOpsDTO' on field 'questionId': rejected value [null]; codes [NotNull.questionOpsDTO.questionId,NotNull.questionId,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [questionOpsDTO.questionId,questionId]; arguments []; default message [questionId]]; default message [不能为null]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:158)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:128)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-03-18 18:33:12,314 [http-nio-8081-exec-4] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer, answer=AnswerAddDTO(questionId=7, answer=<h1><b>敲代码</b></h1>)
+2018-03-18 18:35:52,083 [http-nio-8081-exec-2] INFO  [com.netlink.pangu.web.QaQuestionController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save question, question=QuestionAddDTO(categoryId=21, title=真的发生的发生的反, question=<p>阿斯顿发生的发生的发生地方</p>)
+2018-03-18 18:36:07,194 [http-nio-8081-exec-6] INFO  [com.netlink.pangu.web.QaQuestionController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save question, question=QuestionAddDTO(categoryId=22, title=的弗格森的风格还是的风格, question=<p>是的弗格森的风格还是的风格是的父干涉</p>)
+2018-03-18 18:36:24,024 [http-nio-8081-exec-5] INFO  [com.netlink.pangu.web.QaQuestionController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save question, question=QuestionAddDTO(categoryId=25, title=vzdfvasdrfasefasfasfasdfa, question=<p>阿斯顿发生的发生大发</p>)
+2018-03-18 18:36:37,726 [http-nio-8081-exec-1] INFO  [com.netlink.pangu.web.QaQuestionController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save question, question=QuestionAddDTO(categoryId=21, title=阿斯顿发生的发生的发生, question=<p>撒的发生的发生的法务说的发生</p>)
+2018-03-18 19:14:36,230 [http-nio-8081-exec-9] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=2, comment=这是什么, replyToCommentId=4)
+2018-03-18 19:15:19,523 [http-nio-8081-exec-4] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- save answer comment, params=AnswerCommentAddDTO(answerId=2, comment=不知道啊, replyToCommentId=5)
+2018-03-18 19:15:35,042 [http-nio-8081-exec-5] INFO  [com.netlink.pangu.web.QaAnswerController]
+				[trace=,span=,parent=,name=,app=,begintime=,endtime=]
+				- sign answer, ops=AnswerOpsDTO(answerId=2, ops=-1)
